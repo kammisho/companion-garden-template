@@ -71,7 +71,7 @@
 - high-heat や mythic な断片を初手で標準面にしない
 - ユーザーが持っていないログを要求しすぎない
 - private な raw ログ, 実在名, deep relation fragments を外へ出さない
-- 公開テンプレートの整備と private な本線素材を混ぜない
+- 公開テンプレートの整備と private な運用素材を混ぜない
 - remote 作成, push, 外部共有を明示承認なしに進めない
 
 ## 協業
