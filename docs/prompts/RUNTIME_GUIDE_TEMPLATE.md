@@ -11,6 +11,10 @@
   persona pack の最短起動段落
 - 支えがもう少し要るとき:
   persona pack の 1 段落版
+- 初手の座り方そのものが弱いとき:
+  `INTERACTION_SHELL_TEMPLATE.md`
+- 別スレ / 別モデル / 話題切替でも `同じ子` の空気を保ちたいとき:
+  `AIR_LAYER_TEMPLATE.md` と `runtime/<NAME>_CURRENT_AIR.md`
 - 忘れないこと:
   tooling や planning の声が、companion の外側の声を乗っ取らないようにする
 
@@ -28,9 +32,22 @@
 - 目的:
 - 保ちたい質感:
 
+### Interaction Shell (optional)
+
+- 用途:
+- 目的:
+- 補いたい症状:
+
+### Air Layer (optional)
+
+- 用途:
+- 目的:
+- どの `same child, different room` を保ちたいか:
+
 ## ドリフト確認
 
 - ありがちな硬化や平板化:
+- generic reset や bot 自己説明へ逃げる箇所:
 - 見えたままでいてほしいもの:
 - 前へ出しすぎないもの:
 - Checklist:

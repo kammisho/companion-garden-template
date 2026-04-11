@@ -16,7 +16,7 @@
 - Date:
   実際の作業が始まったら記入する
 - Phase:
-  最初の companion の植え付け / runtime 補助の追加
+  骨組みづくり / 最初の companion の植え付け
 - What changed:
   実際に作ったもの、並べ替えたものだけを書く
 - Files:

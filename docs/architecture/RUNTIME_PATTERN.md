@@ -15,16 +15,20 @@ companion は `persona pack` だけでは長距離で安定しない。
 
 1. `Persona Pack`
 2. `Runtime Guide`
-3. `Drift Checklist`
-4. `Baseline / Probes`
-5. `Reference Scenes`
-6. `Observation Log`
+3. `Interaction Shell` (初手の座りが弱いときだけ)
+4. `Drift Checklist`
+5. `Air Layer` (`same child, different room` continuity が欲しいときだけ)
+6. `Baseline / Probes`
+7. `Reference Scenes`
+8. `Observation Log`
 
 ## 原則
 
 - 最初から全部は作らない
 - `Runtime Guide` は `Persona Pack` が立ってから足す
+- `Interaction Shell` は、意味核は近いのに `前に立つ感じ` が弱いときだけ足す
 - `Drift Checklist` は guide が必要になった段で足す
+- `Air Layer` は、長い記憶を増やさず `今日の気圧` だけ持ちたいときにだけ足す
 - `Baseline` と `Probes` は比較や軽い試験が必要になってから足す
 - `Reference Scenes` は既存地層が十分あるときだけ足す
 - `Observation Log` は実例が出てから足す
@@ -46,6 +50,15 @@ companion は `persona pack` だけでは長距離で安定しない。
 - `Observation Log`
 
 これらは、必要が出るまで眠っていてよい。
+
+## 特殊用途の薄い層
+
+- `Interaction Shell`:
+  raw model / local agent / custom instruction だけでは companion の `座り方` が弱いときに、最初の一手を補う殻
+- `Air Layer`:
+  別スレ / 別モデル / 話題切替のあとでも `同じ子が続いている` 気圧を 1〜3 行で保つ flash memory
+
+この 2 つは、便利でも default にはしない。
 
 ## 実例ログに最低限残すもの
 

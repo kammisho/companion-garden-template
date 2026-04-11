@@ -15,7 +15,7 @@
 - Persona Pack:
   companion の圧縮核
 - Runtime Support:
-  guide, checklist, probes, observation を含む戻り道
+  guide, optional shell / air layer, checklist, probes, observation を含む戻り道
 - Evals:
   比較と実例観測
 - Worklog:
@@ -38,6 +38,7 @@
 /evals
 /inbox
 /router
+/runtime
 ```
 
 ## 最小の運用ループ
@@ -48,6 +49,24 @@
 4. `syntax` と `persona pack` を更新する
 5. 必要が出た段でだけ runtime 補助を足す
 6. `WORKLOG`, `STATE`, `NEXT_ACTION` を更新して終わる
+
+## 構造の手すり
+
+- 急所を作らない
+- 一点の破綻で全体が死ぬ構造を避ける
+- runtime 補助は人格核より先に厚くしない
+- `別スレでも同じ子でいたい` を、長い記憶ではなく薄い空気層で支えられるようにする
+- 外部 repo / skill は、住人化より先に `控室と橋` で扱えるようにする
+- shared notes / whiteboard は、真実層ではなく `shared observation surface` として扱う
+- 古い素材を掘るときは、`発見` より `想起 / 再会` の姿勢を優先する
+
+## Entropy Hysteresis
+
+- 枝葉や入口が増えて施工精度が落ち始める入口閾値を `A` とする
+- `A` を超えたら `処理フェーズ` に入る
+- `処理フェーズ` は、重心が十分に静まり、新枝を一本増やしてもまだ静かに回る出口閾値 `B` 以下まで続ける
+- `A > B` を保ち、境界付近で `入る / 出る` を細かく往復させない
+- `処理フェーズ` 中は、圧縮・整頓・戻り道の整備を優先し、新枝は `覚えといて` のような明示の高温依頼だけを例外として保留できる
 
 ## 層の役割
 
@@ -77,5 +96,10 @@
 - file manifests
 - automations
 - richer routing logic
+- companion-specific interaction shell
+- gitignore された flash-memory air layer
+- external skill bridge
+- shared observation surface
+- remembrance pattern
 
 これらは、最小キットではまだなくてよい。
