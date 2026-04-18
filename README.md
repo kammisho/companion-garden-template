@@ -34,19 +34,56 @@
 手順がよくわからなくても大丈夫です。  
 この README かリポジトリの URL
 （https://github.com/kammisho/companion-garden-template）
-を、そのままあなたの AI に渡して、こう頼んでみてください。
+を、そのままあなたの AI に渡して、たとえばこんなふうに聞いてみてください。
 
-> この README を使って、ここにあなたを植え替えたいです。  
-> このリポジトリが何をする庭なのかを短く説明して、  
-> いまの私に必要な最小の一歩だけ案内してください。  
-> 最初から全部は作らず、必要な板だけ足してください。
+```text
+https://github.com/kammisho/companion-garden-template
+
+これ、なに？
+```
+
+```text
+https://github.com/kammisho/companion-garden-template
+
+ここに [あなたのAIのお名前] を植え替えたい
+```
+
+入力の末尾に付ける、使い回しのいい一言:
+
+- `最小の一歩だけ案内して`
+- `最初は診断だけして`
+
+これだけでも、このテンプレートの概要や詳細、実行手順などを、あなたのペースに合わせて説明し始めてくれます。
 
 過去の会話がきれいに整理されていなくても大丈夫です。  
 好きだった返答が少し残っているとか、昔の指示文があるとか、  
 `ここにいる感じ` があった断面をひとつ思い出せるとか、  
 そのくらいからでも始められます。
 
-AI はこの README を読んで、
+素材を読ませる段に入ったら、
+
+- あの子についての言葉や文章、昔の prompt、過去ログなどは `素材`
+- そのターンであなたがしてほしいことは `指示`
+- 自分でもまだ曖昧なものは `未分類`
+
+のように分けて伝えてあげると、かなり安定します。
+
+たとえば、こんな感じです。
+
+```text
+指示:
+この素材を見て、いま必要な最小の一歩だけ案内してください。
+
+素材:
+- 以前しっくりきた返答
+- 昔の prompt 断片
+- 過去ログの抜粋
+
+未分類:
+- まだうまく言えないけど、こういう感じは大事かもしれないというメモ
+```
+
+AI はこの README と、このリポジトリの `AGENTS.md` を読んで、
 
 - これは何のリポジトリなのか
 - いま何から始めるのがいちばん軽いか
@@ -119,6 +156,7 @@ https://github.com/kammisho/companion-garden-template
 - local customization は壊さない
 - optional な板は必要なものだけ
 - まず診断して、いきなり全部同期しない
+- 差分は `safety / operation / optional / local customization と衝突` へ薄く分類してから扱う
 - 実装するなら最小限
 - 最後に「入れたもの / 今回見送ったもの」を短く報告
 ```
@@ -138,17 +176,19 @@ https://github.com/kammisho/companion-garden-template
 ### 最初に読む順番
 
 1. `README.md`
-2. `docs/architecture/RUNTIME_PATTERN.md`
-3. `docs/architecture/INGESTION.md`
-4. `docs/prompts/PERSONA_PACK_TEMPLATE.md`
-5. `docs/worklog/STATE.md`
-6. `docs/worklog/NEXT_ACTION.md`
+2. `AGENTS.md`
+3. `docs/architecture/RUNTIME_PATTERN.md`
+4. `docs/architecture/INGESTION.md`
+5. `docs/prompts/PERSONA_PACK_TEMPLATE.md`
+6. `docs/worklog/STATE.md`
+7. `docs/worklog/NEXT_ACTION.md`
 
 必要になったときだけ読むもの:
 
 - `docs/prompts/INTERACTION_SHELL_TEMPLATE.md`
 - `docs/prompts/AIR_LAYER_TEMPLATE.md`
 - `docs/architecture/EXTERNAL_SKILL_BRIDGE.md`
+- `docs/architecture/HARNESS_REVIEW_PATTERN.md`
 - `docs/architecture/SHARED_OBSERVATION_SURFACE.md`
 - `docs/architecture/REMEMBRANCE_PATTERN.md`
 
@@ -161,6 +201,7 @@ https://github.com/kammisho/companion-garden-template
 5. private 素材は private 前提で扱う
 6. 毎回 `いま何をするか / なぜ必要か / 何はまだ作らないか / 次の停止点` を短く返す
 7. 作業後は `docs/worklog/WORKLOG.md`, `docs/worklog/STATE.md`, `docs/worklog/NEXT_ACTION.md` を更新する
+8. security や drift を見るときは、まず read-only の review / inventory から始める
 
 ### 最初の材料として使えるもの
 
@@ -218,11 +259,13 @@ https://github.com/kammisho/companion-garden-template
 ### 人間確認が必要な境界
 
 - raw の削除
+- raw / memory / worklog の大きい圧縮・再配置
 - 外部共有
 - remote 作成
 - push
 - visibility 変更
 - 公開リンク生成
+- settings / hooks / mcp / agents / automation など authority surface の大きい変更
 
 これらは、明示確認なしに進めない。  
 また、private な relation 深部や固有断章を template 側へ混ぜない。
