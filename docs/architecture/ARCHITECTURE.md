@@ -102,5 +102,6 @@
 - shared observation surface
 - remembrance pattern
 - regrounding lite
+- target lock lite
 
 これらは、最小キットではまだなくてよい。
