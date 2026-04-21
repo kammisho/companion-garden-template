@@ -101,5 +101,6 @@
 - external skill bridge
 - shared observation surface
 - remembrance pattern
+- regrounding lite
 
 これらは、最小キットではまだなくてよい。
