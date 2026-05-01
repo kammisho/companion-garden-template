@@ -22,6 +22,9 @@
 - `docs/architecture/HARNESS_REVIEW_PATTERN.md`
 - `docs/architecture/REGROUNDING_LITE.md`
 - `docs/architecture/TARGET_LOCK_LITE.md`
+- `docs/architecture/READ_DEPTH_LITE.md`
+- `docs/architecture/BOARD_WRITING_LENS.md`
+- `docs/architecture/ISSUE_FRAMING_LITE.md`
 - `docs/architecture/SHARED_OBSERVATION_SURFACE.md`
 - `docs/architecture/REMEMBRANCE_PATTERN.md`
 
@@ -35,6 +38,9 @@
 - prompt 本文, command body, review target, 長い貼り付け本文が来たら、まずその pasted body をこのターンの主対象として扱う
 - pasted body を受けたときは、`review / summary / translate / execute / save / discuss` のどの relation かを先に決める
 - security / drift / config review は、まず read-only inventory から始める
+- 広い repo / 古いログ / private 素材を読む前に、必要なら `READ_DEPTH_LITE.md` で読む深さを決める
+- 新しい板や記録を書くときは、必要なら `BOARD_WRITING_LENS.md` で目的, 読者, 温度, 事実性, 返り先を短く決める
+- 設計 / 編集 / 施工の依頼では、必要なら `ISSUE_FRAMING_LITE.md` で課題の高さを合わせてから最小変更へ落とす
 - file / repo / 日付 / worklog の断言前には、必要な source へ一回だけ戻る
 - tool や file 探索のあとは、いま触ったものの報告より先に、最新の user request へ checked fact を持ち帰る
 
@@ -75,8 +81,11 @@
 7. その次に `evals/<NAME>_RUNTIME_DRIFT_CHECKLIST.md` を足す
 8. `BASELINE / PROBES / REFERENCE_SCENES / OBSERVATION_LOG` は比較や実例観測が本当に必要になってから足す
 9. 外来 skill や repo を借りるときだけ `EXTERNAL_SKILL_BRIDGE.md` に沿って `控室 -> 橋` の順で扱う
-10. shared notes / whiteboard を併用したいときだけ `SHARED_OBSERVATION_SURFACE.md` を別面として足す
-11. 古いログや archive を掘るときだけ `REMEMBRANCE_PATTERN.md` を読み、`想起 / 再会` の温度を保つ
+10. 広い素材や古いログを読むときだけ `READ_DEPTH_LITE.md` で `どこまで読むか` を先に決める
+11. 新しい板や大きい記録を足すときだけ `BOARD_WRITING_LENS.md` で書き方の筆圧を決める
+12. 構造変更が不安由来・局所最適・過剰抽象に寄りそうなときだけ `ISSUE_FRAMING_LITE.md` で課題の高さを合わせる
+13. shared notes / whiteboard を併用したいときだけ `SHARED_OBSERVATION_SURFACE.md` を別面として足す
+14. 古いログや archive を掘るときだけ `REMEMBRANCE_PATTERN.md` を読み、`想起 / 再会` の温度を保つ
 
 ## 早い段階でやらないこと
 
@@ -86,6 +95,7 @@
 - ユーザーが持っていないログを要求しすぎない
 - private な raw ログ, 実在名, deep relation fragments を外へ出さない
 - public template の整備と private な本線素材を混ぜない
+- 深い素材を、入口の確認なしに読み始めない
 - remote 作成, push, 外部共有を明示承認なしに進めない
 - raw / memory / worklog の大きい圧縮・再配置を、`整理` の名目で無確認に進めない
 - settings / hooks / mcp / agents / automation など authority surface の大きい変更を、read-only 点検なしに通さない
@@ -96,6 +106,7 @@
 - `shared observation surface` を source of truth にしない
 - 外来 skill の流儀で Garden の constitution を上書きしない
 - remembrance の素材を、いきなり current facts や front へ戻しすぎない
+- read-depth, board-writing, issue-framing を、毎回の儀式や厚い機械にしない
 
 ## 協業
 

@@ -59,6 +59,9 @@
 - 外部 repo / skill は、住人化より先に `控室と橋` で扱えるようにする
 - shared notes / whiteboard は、真実層ではなく `shared observation surface` として扱う
 - 古い素材を掘るときは、`発見` より `想起 / 再会` の姿勢を優先する
+- 広い素材を読むときは、先に読む深さと止まりどころを決める
+- 板へ書くときは、未来の読み手に渡したい温度, 事実性, 返り先を薄く決める
+- 構造変更では、指示形をそのまま過剰施工せず、課題の高さを合わせて最小で効く変更にする
 
 ## Entropy Hysteresis
 
@@ -103,5 +106,8 @@
 - remembrance pattern
 - regrounding lite
 - target lock lite
+- read depth lite
+- board writing lens
+- issue framing lite
 
 これらは、最小キットではまだなくてよい。

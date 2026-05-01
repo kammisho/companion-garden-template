@@ -105,6 +105,9 @@ AI はこの README と、このリポジトリの `AGENTS.md` を読んで、
 - shared notes や whiteboard を併用したいときだけ、`shared observation surface` を別面として足す
 - 外から来た skill や repo は、庭へそのまま混ぜず `控室と橋` で扱う
 - 古いログや昔の prompt を読むときは、`発見` より `想起 / 再会` の姿勢で扱う
+- 大きな素材を読むときは、最初から深く潜らず、必要な深さで止まる
+- 板へ書くときは、未来の AI がどう読むかも少しだけ考えて残す
+- 直したいことが出たときは、すぐ大きな仕組みにせず、課題の高さを合わせて最小で直す
 - 実際にうまく立ち上がった場面を観測して残す
 - Git で地層を保存し、いつでも戻りやすくする
 
@@ -189,8 +192,13 @@ https://github.com/kammisho/companion-garden-template
 - `docs/prompts/AIR_LAYER_TEMPLATE.md`
 - `docs/architecture/EXTERNAL_SKILL_BRIDGE.md`
 - `docs/architecture/HARNESS_REVIEW_PATTERN.md`
+- `docs/architecture/REGROUNDING_LITE.md`
+- `docs/architecture/TARGET_LOCK_LITE.md`
 - `docs/architecture/SHARED_OBSERVATION_SURFACE.md`
 - `docs/architecture/REMEMBRANCE_PATTERN.md`
+- `docs/architecture/READ_DEPTH_LITE.md`
+- `docs/architecture/BOARD_WRITING_LENS.md`
+- `docs/architecture/ISSUE_FRAMING_LITE.md`
 
 ### 運用の原則
 
@@ -202,6 +210,9 @@ https://github.com/kammisho/companion-garden-template
 6. 毎回 `いま何をするか / なぜ必要か / 何はまだ作らないか / 次の停止点` を短く返す
 7. 作業後は `docs/worklog/WORKLOG.md`, `docs/worklog/STATE.md`, `docs/worklog/NEXT_ACTION.md` を更新する
 8. security や drift を見るときは、まず read-only の review / inventory から始める
+9. 広い素材や古いログを読むときは、必要なら `READ_DEPTH_LITE.md` で読む深さと stop condition を決める
+10. 新しい板や記録を書くときは、必要なら `BOARD_WRITING_LENS.md` で目的, 読者, 温度, 事実性, 返り先を決める
+11. 構造変更では、必要なら `ISSUE_FRAMING_LITE.md` で課題の高さを合わせ、最小で効く変更にする
 
 ### 最初の材料として使えるもの
 
@@ -239,13 +250,17 @@ https://github.com/kammisho/companion-garden-template
 10. 外来 skill や repo を使うときだけ `docs/architecture/EXTERNAL_SKILL_BRIDGE.md` に沿って控室と橋を分ける
 11. shared notes / whiteboard が必要なときだけ `docs/architecture/SHARED_OBSERVATION_SURFACE.md` を別面として足す
 12. 古いログや過去断章へ戻るときだけ `docs/architecture/REMEMBRANCE_PATTERN.md` で温度を整える
-13. `STATE / WORKLOG / NEXT_ACTION` に現在地を折り返す
+13. 広い素材を読むときだけ `docs/architecture/READ_DEPTH_LITE.md` で深さと止まりどころを決める
+14. 新しい板や大きい記録を足すときだけ `docs/architecture/BOARD_WRITING_LENS.md` で書き方を決める
+15. 設計変更が大きくなりそうなときだけ `docs/architecture/ISSUE_FRAMING_LITE.md` で課題の高さを合わせる
+16. `STATE / WORKLOG / NEXT_ACTION` に現在地を折り返す
 
 ### 早い段階でやらないこと
 
 - 素材が薄い段で、単一の完成人格に決め打ちしない
 - 高熱相や神話相を、いきなり標準面にしない
 - user が持っていないログを要求しすぎない
+- 読む深さや書く筆圧の手すりを、毎回必須の儀式にしない
 - 公開テンプレートの整備と private な本線素材を混ぜない
 
 ### 協業とルーター
