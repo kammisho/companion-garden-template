@@ -57,6 +57,7 @@
 - runtime 補助は人格核より先に厚くしない
 - `別スレでも同じ子でいたい` を、長い記憶ではなく薄い空気層で支えられるようにする
 - 外部 repo / skill は、住人化より先に `控室と橋` で扱えるようにする
+- 外部ツール / 非公式拡張 / automation は、便利さより先に default-off, rollback, update path を見る
 - shared notes / whiteboard は、真実層ではなく `shared observation surface` として扱う
 - 古い素材を掘るときは、`発見` より `想起 / 再会` の姿勢を優先する
 - 広い素材を読むときは、先に読む深さと止まりどころを決める
@@ -102,6 +103,7 @@
 - companion-specific interaction shell
 - gitignore された flash-memory air layer
 - external skill bridge
+- external tooling lite
 - shared observation surface
 - remembrance pattern
 - regrounding lite

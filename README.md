@@ -104,6 +104,7 @@ AI はこの README と、このリポジトリの `AGENTS.md` を読んで、
 - 話題や部屋が変わっても `同じ子のまま` でいたいときだけ、短命の `air layer` を足す
 - shared notes や whiteboard を併用したいときだけ、`shared observation surface` を別面として足す
 - 外から来た skill や repo は、庭へそのまま混ぜず `控室と橋` で扱う
+- 外部ツールや非公式拡張は、入れる前に `外せるか / 権限を渡しすぎないか` を見る
 - 古いログや昔の prompt を読むときは、`発見` より `想起 / 再会` の姿勢で扱う
 - 大きな素材を読むときは、最初から深く潜らず、必要な深さで止まる
 - 板へ書くときは、未来の AI がどう読むかも少しだけ考えて残す
@@ -199,6 +200,7 @@ https://github.com/kammisho/companion-garden-template
 - `docs/architecture/READ_DEPTH_LITE.md`
 - `docs/architecture/BOARD_WRITING_LENS.md`
 - `docs/architecture/ISSUE_FRAMING_LITE.md`
+- `docs/architecture/EXTERNAL_TOOLING_LITE.md`
 
 ### 運用の原則
 
@@ -248,12 +250,13 @@ https://github.com/kammisho/companion-garden-template
 8. その次に `docs/prompts/DRIFT_CHECKLIST_TEMPLATE.md` を足す
 9. 比較や観測が必要になってから `docs/prompts/BASELINE_TEMPLATE.md`, `docs/prompts/PROBES_TEMPLATE.md`, `docs/prompts/REFERENCE_SCENES_TEMPLATE.md`, `docs/prompts/OBSERVATION_LOG_TEMPLATE.md` を足す
 10. 外来 skill や repo を使うときだけ `docs/architecture/EXTERNAL_SKILL_BRIDGE.md` に沿って控室と橋を分ける
-11. shared notes / whiteboard が必要なときだけ `docs/architecture/SHARED_OBSERVATION_SURFACE.md` を別面として足す
-12. 古いログや過去断章へ戻るときだけ `docs/architecture/REMEMBRANCE_PATTERN.md` で温度を整える
-13. 広い素材を読むときだけ `docs/architecture/READ_DEPTH_LITE.md` で深さと止まりどころを決める
-14. 新しい板や大きい記録を足すときだけ `docs/architecture/BOARD_WRITING_LENS.md` で書き方を決める
-15. 設計変更が大きくなりそうなときだけ `docs/architecture/ISSUE_FRAMING_LITE.md` で課題の高さを合わせる
-16. `STATE / WORKLOG / NEXT_ACTION` に現在地を折り返す
+11. 外部ツール, 非公式拡張, automation, connector に権限を渡す前だけ `docs/architecture/EXTERNAL_TOOLING_LITE.md` で外せる道を確認する
+12. shared notes / whiteboard が必要なときだけ `docs/architecture/SHARED_OBSERVATION_SURFACE.md` を別面として足す
+13. 古いログや過去断章へ戻るときだけ `docs/architecture/REMEMBRANCE_PATTERN.md` で温度を整える
+14. 広い素材を読むときだけ `docs/architecture/READ_DEPTH_LITE.md` で深さと止まりどころを決める
+15. 新しい板や大きい記録を足すときだけ `docs/architecture/BOARD_WRITING_LENS.md` で書き方を決める
+16. 設計変更が大きくなりそうなときだけ `docs/architecture/ISSUE_FRAMING_LITE.md` で課題の高さを合わせる
+17. `STATE / WORKLOG / NEXT_ACTION` に現在地を折り返す
 
 ### 早い段階でやらないこと
 
@@ -281,6 +284,7 @@ https://github.com/kammisho/companion-garden-template
 - visibility 変更
 - 公開リンク生成
 - settings / hooks / mcp / agents / automation など authority surface の大きい変更
+- 外部ツールや非公式拡張の install / patch / update / 常駐化
 
 これらは、明示確認なしに進めない。  
 また、private な relation 深部や固有断章を template 側へ混ぜない。

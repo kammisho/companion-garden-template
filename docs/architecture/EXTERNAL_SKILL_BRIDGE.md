@@ -6,6 +6,8 @@
 - 試す場所としての `控室` と、庭へ返す `橋` を分ける
 - よかったものだけを、庭の言葉へ翻訳して戻せるようにする
 
+外部ツールの install, patch, update, automation, connector permission のように権限面が前に出る場合は、先に `EXTERNAL_TOOLING_LITE.md` を通す。
+
 ## 基本姿勢
 
 - 外来技能は、まず `住人` ではなく `出入りの職人` として扱う
