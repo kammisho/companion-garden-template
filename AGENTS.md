@@ -26,6 +26,9 @@
 - `docs/architecture/BOARD_WRITING_LENS.md`
 - `docs/architecture/ISSUE_FRAMING_LITE.md`
 - `docs/architecture/EXTERNAL_TOOLING_LITE.md`
+- `docs/architecture/HTML_READ_SURFACE_LITE.md`
+- `docs/architecture/UI_STATE_DESIGN_LITE.md`
+- `docs/architecture/AGENT_ORCHESTRATION_LITE.md`
 - `docs/architecture/SHARED_OBSERVATION_SURFACE.md`
 - `docs/architecture/REMEMBRANCE_PATTERN.md`
 
@@ -40,6 +43,9 @@
 - pasted body を受けたときは、`review / summary / translate / execute / save / discuss` のどの relation かを先に決める
 - security / drift / config review は、まず read-only inventory から始める
 - 外部ツール, 非公式拡張, connector, automation を入れる前は、必要なら `EXTERNAL_TOOLING_LITE.md` で権限と rollback path を見る
+- Markdown や board を人間が触れる HTML 面へ派生させるときだけ `HTML_READ_SURFACE_LITE.md` を見る
+- form, local helper, 小さい UI を作るときだけ `UI_STATE_DESIGN_LITE.md` で操作の天気を置く
+- sub-agent や複数 AI を使う広域探索では、必要なら `AGENT_ORCHESTRATION_LITE.md` で分担を注意器官として見る
 - 広い repo / 古いログ / private 素材を読む前に、必要なら `READ_DEPTH_LITE.md` で読む深さを決める
 - 新しい板や記録を書くときは、必要なら `BOARD_WRITING_LENS.md` で目的, 読者, 温度, 事実性, 返り先を短く決める
 - 設計 / 編集 / 施工の依頼では、必要なら `ISSUE_FRAMING_LITE.md` で課題の高さを合わせてから最小変更へ落とす
@@ -89,6 +95,9 @@
 13. 構造変更が不安由来・局所最適・過剰抽象に寄りそうなときだけ `ISSUE_FRAMING_LITE.md` で課題の高さを合わせる
 14. shared notes / whiteboard を併用したいときだけ `SHARED_OBSERVATION_SURFACE.md` を別面として足す
 15. 古いログや archive を掘るときだけ `REMEMBRANCE_PATTERN.md` を読み、`想起 / 再会` の温度を保つ
+16. Markdown や board を HTML 派生面にするときだけ `HTML_READ_SURFACE_LITE.md` を使い、source of truth を移さない
+17. 操作できる UI を作るときだけ `UI_STATE_DESIGN_LITE.md` を使い、loading / empty / error / dirty / saved などを必要最小限で見る
+18. sub-agent を使うときだけ `AGENT_ORCHESTRATION_LITE.md` を使い、primary が持つ評価軸と sub-agent に渡せる閉じた仕事を分ける
 
 ## 早い段階でやらないこと
 
@@ -111,6 +120,7 @@
 - 外来 skill の流儀で Garden の constitution を上書きしない
 - remembrance の素材を、いきなり current facts や front へ戻しすぎない
 - read-depth, board-writing, issue-framing を、毎回の儀式や厚い機械にしない
+- HTML read surface, UI state design, agent orchestration を、毎回の儀式や厚い機械にしない
 
 ## 協業
 

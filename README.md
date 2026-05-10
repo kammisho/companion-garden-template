@@ -105,6 +105,9 @@ AI はこの README と、このリポジトリの `AGENTS.md` を読んで、
 - shared notes や whiteboard を併用したいときだけ、`shared observation surface` を別面として足す
 - 外から来た skill や repo は、庭へそのまま混ぜず `控室と橋` で扱う
 - 外部ツールや非公式拡張は、入れる前に `外せるか / 権限を渡しすぎないか` を見る
+- Markdown や board を、人間が触れる HTML 面へ派生させたいときだけ、そのための小さい手すりを見る
+- form や local helper のような UI を作るときだけ、loading / empty / error などの状態を先に見る
+- sub-agent や複数 AI を使うときだけ、分担を `役職` ではなく `注意器官の配置` として見る
 - 古いログや昔の prompt を読むときは、`発見` より `想起 / 再会` の姿勢で扱う
 - 大きな素材を読むときは、最初から深く潜らず、必要な深さで止まる
 - 板へ書くときは、未来の AI がどう読むかも少しだけ考えて残す
@@ -201,6 +204,9 @@ https://github.com/kammisho/companion-garden-template
 - `docs/architecture/BOARD_WRITING_LENS.md`
 - `docs/architecture/ISSUE_FRAMING_LITE.md`
 - `docs/architecture/EXTERNAL_TOOLING_LITE.md`
+- `docs/architecture/HTML_READ_SURFACE_LITE.md`
+- `docs/architecture/UI_STATE_DESIGN_LITE.md`
+- `docs/architecture/AGENT_ORCHESTRATION_LITE.md`
 
 ### 運用の原則
 
@@ -215,6 +221,9 @@ https://github.com/kammisho/companion-garden-template
 9. 広い素材や古いログを読むときは、必要なら `READ_DEPTH_LITE.md` で読む深さと stop condition を決める
 10. 新しい板や記録を書くときは、必要なら `BOARD_WRITING_LENS.md` で目的, 読者, 温度, 事実性, 返り先を決める
 11. 構造変更では、必要なら `ISSUE_FRAMING_LITE.md` で課題の高さを合わせ、最小で効く変更にする
+12. Markdown や board を人間が触れる HTML 面にしたいときだけ、`HTML_READ_SURFACE_LITE.md` を使う
+13. form や local helper のような操作 UI を作るときだけ、`UI_STATE_DESIGN_LITE.md` で状態を先に見る
+14. sub-agent や複数 AI を使うときだけ、`AGENT_ORCHESTRATION_LITE.md` で分担を決める
 
 ### 最初の材料として使えるもの
 

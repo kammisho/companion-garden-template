@@ -63,6 +63,9 @@
 - 広い素材を読むときは、先に読む深さと止まりどころを決める
 - 板へ書くときは、未来の読み手に渡したい温度, 事実性, 返り先を薄く決める
 - 構造変更では、指示形をそのまま過剰施工せず、課題の高さを合わせて最小で効く変更にする
+- Markdown や board を人間が触れる派生面にするときは、source of truth を移さず `HTML_READ_SURFACE_LITE` を通す
+- 操作できる UI を作るときは、先に `UI_STATE_DESIGN_LITE` で必要な状態だけを見る
+- sub-agent や複数 AI を使うときは、`AGENT_ORCHESTRATION_LITE` で primary の評価軸と sub-agent の閉じた仕事を分ける
 
 ## Entropy Hysteresis
 
@@ -111,5 +114,8 @@
 - read depth lite
 - board writing lens
 - issue framing lite
+- html read surface lite
+- ui state design lite
+- agent orchestration lite
 
 これらは、最小キットではまだなくてよい。

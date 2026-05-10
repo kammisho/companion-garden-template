@@ -8,3 +8,5 @@
   1 人の companion に `raw の置き場`, `syntax memory`, `persona pack`, そして更新済みの `STATE / WORKLOG / NEXT_ACTION` がある。
 - 次:
   runtime の戻り道が必要になったら `Runtime Guide` を足し、その次に `Drift Checklist` を足す。比較や観測が必要になるまでは任意の板を増やさない。
+- optional:
+  Markdown / board を人間が触れる HTML 面にしたいときは `HTML_READ_SURFACE_LITE.md`、操作できる UI を作るときは `UI_STATE_DESIGN_LITE.md`、sub-agent や複数 AI を使うときは `AGENT_ORCHESTRATION_LITE.md` を必要時だけ読む。
