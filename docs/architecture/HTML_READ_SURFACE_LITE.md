@@ -5,6 +5,12 @@ Markdown や memory board を、AI だけでなく人間も読みやすく触れ
 これは source of truth を置き換えるものではない。
 正本は Markdown, raw, canonical log, board に置いたまま、必要なときだけ local HTML の派生面を作る。
 
+## Related Layers
+
+- `HTML_READ_SURFACE_LITE`: why / position / when
+- `UI_STATE_DESIGN_LITE`: state / consequences / recovery
+- `AGENT_ORCHESTRATION_LITE`: delegation / attention placement / integration
+
 ## 目的
 
 - 長い Markdown や board を、人間が scan / search / copy / compare しやすくする

@@ -34,6 +34,7 @@
   optional handrail enrichment
 - What changed:
   HTML read surface, UI state design, and agent orchestration の軽い optional handrail を追加した。
+  `HTML_READ_SURFACE_LITE.md` に、関連する Lite 板を `why / state / delegation` で見分ける小さい layer map を追加した。
 - Files:
   - `docs/architecture/HTML_READ_SURFACE_LITE.md`
   - `docs/architecture/UI_STATE_DESIGN_LITE.md`
