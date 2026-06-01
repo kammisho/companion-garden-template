@@ -18,6 +18,7 @@
   - Markdown や board を人間が触れる HTML 面にしたいときだけ `HTML_READ_SURFACE_LITE.md` を読む
   - 操作できる UI を作るときだけ `UI_STATE_DESIGN_LITE.md` を読む
   - sub-agent や複数 AI を使うときだけ `AGENT_ORCHESTRATION_LITE.md` を読む
+  - Codex や複数 AI を OSS / public repo の保守へ使うときだけ `CODEX_OSS_MAINTAINER_LITE.md` を読む
 - 人間待ち:
   - companion 名
   - 使えそうな素材

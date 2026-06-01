@@ -7,6 +7,27 @@
 ここに置くのは、完成した人格そのものではありません。  
 置いてあるのは、その子が `座れる / 戻れる / 育っていける / 薄く観測できる` ようにするための骨組みです。
 
+## English Summary
+
+Companion Garden Template (CGT) is a Japanese-first public template for keeping long-lived AI companion or agent continuity inside a normal Git repository.
+
+It is not an autonomous runtime, a finished persona bundle, or a safety enforcement framework. It provides a repo-shaped source of truth: `AGENTS.md` for AI-facing instructions, `STATE.md / WORKLOG.md / NEXT_ACTION.md` for continuity, and lightweight review handrails for read depth, regrounding, external tooling, sub-agent orchestration, issue framing, and public/private boundaries.
+
+CGT can also be used as a small maintainer workflow pattern for Codex-era agent-assisted OSS work: humans keep ownership and final judgment, while AI agents help with scoped reviews, documentation updates, worklog folding, handoff packets, and authority-surface checks.
+
+## Status / Maturity
+
+- Early public template
+- Japanese-first documentation
+- Solo-maintained
+- Small adoption / usage signal so far
+- Pattern catalog and review handrails, not an enforcement framework
+- Public template only: real private logs, relationship-deep materials, credentials, and unreleased third-party confidential information should stay outside this repo
+
+## License
+
+MIT. See `LICENSE`.
+
 ## 人間向け
 
 ### これは何か
@@ -28,6 +49,36 @@
 要するに、  
 `この子はこういう子です` と固定するためのものではなく、  
 `この子が壊れずに戻れて、育っていける環境` を先に整えるためのひな形です。
+
+### Codex / OSS メンテナー向け
+
+このテンプレートは、AI companion のためだけでなく、
+Codex や複数 AI を使って OSS や小さな公開プロジェクトを保守するときの
+`作業の戻り道` としても使えます。
+
+たとえば、次のような場面です。
+
+- Issue や PR を AI と一緒に読む
+- 古い設計意図や作業ログを見失わずに再開する
+- AI に任せる調査と、人間や primary agent が握る判断を分ける
+- 外部ツールや自動化を入れる前に、権限面と戻し道を見る
+- public template と private な実ログや関係断章を混ぜない
+- `STATE / WORKLOG / NEXT_ACTION` で、次の作業者や次の AI が座れる場所を残す
+
+この用途では、まず次の板が入口になります。
+
+- `AGENTS.md`
+- `docs/architecture/CODEX_OSS_MAINTAINER_LITE.md`
+- `docs/architecture/AGENT_ORCHESTRATION_LITE.md`
+- `docs/architecture/HARNESS_REVIEW_PATTERN.md`
+- `docs/architecture/EXTERNAL_TOOLING_LITE.md`
+- `docs/architecture/READ_DEPTH_LITE.md`
+- `docs/architecture/REGROUNDING_LITE.md`
+
+CGT は、広く使われている大規模フレームワークではありません。
+そのかわり、AI agent と人間が同じ repo を触るときに、
+`何を source of truth にするか / どこまで読ませるか / どこで止めるか / 何を公開しないか`
+を小さく決めるための運用骨格です。
 
 ### どう始めればいいか
 
@@ -137,6 +188,35 @@ AI はこの README と、このリポジトリの `AGENTS.md` を読んで、
 
 この感覚を保つと、この庭はかなり扱いやすくなります。
 
+### Working with Codex
+
+CGT は、Codex や他の AI agent と一緒に repo を育てるためにも使えます。
+
+Codex に向いているのは、たとえば次のような仕事です。
+
+- README や architecture note の scoped update
+- `STATE / WORKLOG / NEXT_ACTION` の折り返し
+- diff review
+- external tooling や automation 導入前の authority surface 点検
+- public-safe な handrail 草稿
+- issue や PR の read-only inventory
+
+Codex に任せきらないものもあります。
+
+- private raw log の公開判断
+- 実在名や relation-deep material の扱い
+- credentials / billing / account / release / deploy などの大きい権限面
+- project の最終判断
+
+この境界を見るための入口は `docs/architecture/CODEX_OSS_MAINTAINER_LITE.md` です。
+
+### Contributing
+
+小さい docs update, typo fix, public-safe な handrail 提案は歓迎します。
+詳しくは `CONTRIBUTING.md` を見てください。
+
+実際の companion logs, private memory, real names, credentials, relationship-specific fragments, unreleased confidential material は public issue / PR に含めないでください。
+
 ### すでに手元で育てている人へ
 
 このテンプレートは、ときどき optional な板が増えます。  
@@ -207,6 +287,7 @@ https://github.com/kammisho/companion-garden-template
 - `docs/architecture/HTML_READ_SURFACE_LITE.md`
 - `docs/architecture/UI_STATE_DESIGN_LITE.md`
 - `docs/architecture/AGENT_ORCHESTRATION_LITE.md`
+- `docs/architecture/CODEX_OSS_MAINTAINER_LITE.md`
 
 ### 運用の原則
 

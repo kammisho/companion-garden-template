@@ -66,6 +66,7 @@
 - Markdown や board を人間が触れる派生面にするときは、source of truth を移さず `HTML_READ_SURFACE_LITE` を通す
 - 操作できる UI を作るときは、先に `UI_STATE_DESIGN_LITE` で必要な状態だけを見る
 - sub-agent や複数 AI を使うときは、`AGENT_ORCHESTRATION_LITE` で primary の評価軸と sub-agent の閉じた仕事を分ける
+- Codex や複数 AI を public repo / OSS 保守へ使うときは、`CODEX_OSS_MAINTAINER_LITE` で source of truth, authority surface, worklog return を見る
 
 ## Entropy Hysteresis
 
@@ -117,5 +118,6 @@
 - html read surface lite
 - ui state design lite
 - agent orchestration lite
+- codex oss maintainer lite
 
 これらは、最小キットではまだなくてよい。
