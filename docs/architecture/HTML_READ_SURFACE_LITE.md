@@ -9,6 +9,7 @@ Markdown や memory board を、AI だけでなく人間も読みやすく触れ
 
 - `HTML_READ_SURFACE_LITE`: why / position / when
 - `UI_STATE_DESIGN_LITE`: state / consequences / recovery
+- `DESIGN_JUDGMENT_LENS_LITE`: purpose check before visual implementation
 - `AGENT_ORCHESTRATION_LITE`: delegation / attention placement / integration
 
 ## 目的
