@@ -287,6 +287,7 @@ https://github.com/kammisho/companion-garden-template
 - `docs/architecture/HTML_READ_SURFACE_LITE.md`
 - `docs/architecture/UI_STATE_DESIGN_LITE.md`
 - `docs/architecture/AGENT_ORCHESTRATION_LITE.md`
+- `docs/architecture/AGENT_LOOP_DESIGN_LITE.md`
 - `docs/architecture/CODEX_OSS_MAINTAINER_LITE.md`
 
 ### 運用の原則
@@ -305,6 +306,7 @@ https://github.com/kammisho/companion-garden-template
 12. Markdown や board を人間が触れる HTML 面にしたいときだけ、`HTML_READ_SURFACE_LITE.md` を使う
 13. form や local helper のような操作 UI を作るときだけ、`UI_STATE_DESIGN_LITE.md` で状態を先に見る
 14. sub-agent や複数 AI を使うときだけ、`AGENT_ORCHESTRATION_LITE.md` で分担を決める
+15. 同じ agent 作業を繰り返すときだけ、`AGENT_LOOP_DESIGN_LITE.md` で entry / routing / packet / return の loop を作る
 
 ### 最初の材料として使えるもの
 
@@ -346,7 +348,8 @@ https://github.com/kammisho/companion-garden-template
 14. 広い素材を読むときだけ `docs/architecture/READ_DEPTH_LITE.md` で深さと止まりどころを決める
 15. 新しい板や大きい記録を足すときだけ `docs/architecture/BOARD_WRITING_LENS.md` で書き方を決める
 16. 設計変更が大きくなりそうなときだけ `docs/architecture/ISSUE_FRAMING_LITE.md` で課題の高さを合わせる
-17. `STATE / WORKLOG / NEXT_ACTION` に現在地を折り返す
+17. 同じ agent 作業が繰り返されるときだけ `docs/architecture/AGENT_LOOP_DESIGN_LITE.md` で packet と return path を作る
+18. `STATE / WORKLOG / NEXT_ACTION` に現在地を折り返す
 
 ### 早い段階でやらないこと
 

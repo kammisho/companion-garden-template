@@ -118,3 +118,8 @@ sub-agent は、増やすほど賢くなるわけではない。
 ## 一言
 
 `AI の分業は階層ではなく、注意器官の配置。`
+
+## Related
+
+- `AGENT_LOOP_DESIGN_LITE.md`:
+  分担を一回で終わらせず、entry / packet / execution / return の循環にする札。
