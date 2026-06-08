@@ -2,6 +2,13 @@
 
 このファイルは、再開できる粒度で作業を折り返すためのログです。
 
+## Template Boundary
+
+この `WORKLOG.md` は、あなたがこのテンプレートを自分の庭として使い始めたあとに書く場所です。
+
+この公開テンプレート自体のメンテナンス履歴, release note, upstream sync 履歴はここへ書きません。
+それらは git commit, release note, または maintainer 側の private worklog に残してください。
+
 ## 記録ひな形
 
 - Date:
