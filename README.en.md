@@ -89,4 +89,4 @@ If you want any board in English, ask your AI to translate it on demand. That is
 
 ## License
 
-MIT. See the License section in [README.md](README.md).
+MIT. See [LICENSE](LICENSE).

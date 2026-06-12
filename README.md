@@ -28,7 +28,7 @@ CGT can also be used as a small maintainer workflow pattern for Codex-era agent-
 
 ## License
 
-MIT. See `LICENSE`.
+MIT. See [LICENSE](LICENSE).
 
 ## 人間向け
 
