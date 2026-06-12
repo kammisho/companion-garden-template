@@ -39,6 +39,7 @@ Markdown や memory board を、AI だけでなく人間も読みやすく触れ
 - public share が目的で、private 素材の境界がまだ曖昧
 - 見た目を派手にすること自体が目的
 - Markdown で十分読める短い note
+- AI-primary な packet / ledger / internal index で、機械可読性が主目的
 
 ## 基本姿勢
 
@@ -90,6 +91,8 @@ HTML surface は、`きれいなページ` ではなく `操作可能な理解�
 - mobile では列を無理に維持しない
 - keyboard で最低限たどれるようにする
 - `prefers-reduced-motion` を尊重する
+- primary action / trust info / source / return path は 1 手を標準にする
+- 2 手なら中間面が hub として自然かを見せる。3 手以上なら主要導線ではなく奥の参考資料なのか、設計が迷わせているのかを見直す
 
 ## Source Contract
 

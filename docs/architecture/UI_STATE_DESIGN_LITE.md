@@ -70,7 +70,7 @@ UI を作る前に、必要なものだけ選ぶ。
 - undo / recover:
   取り消し, 復元, 再生成
 - navigation / return:
-  どこへ戻れるか
+  いまどこにいて、どこへ戻れるか。primary action / trust info / source / return path は 1 手を標準にし、2 手なら中間面の役割を見せる。3 手以上なら人間の迷子リスクとして設計を見直す
 - mobile dense:
   狭い画面で何を畳むか
 

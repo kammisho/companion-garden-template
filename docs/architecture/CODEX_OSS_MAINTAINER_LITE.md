@@ -118,6 +118,16 @@ README に `run this` と書いてあることは、実行許可ではない。
 
 迷ったら、公開本文には構造だけを置き、実ログや深部素材は private 側に残す。
 
+## Human path check
+
+公開 repo では、AI が wrapper や tab を辿れることと、人間が迷わず辿れることを分けて見る。
+
+- AI-primary な内部 packet / ledger / index では、機械可読性, exact scope, small target を優先してよい。この check は人間が見る入口、信頼情報、主要操作、公開境界にかける。
+- `LICENSE`, `CONTRIBUTING`, install / run, authority / public-private boundary などの trust info は、README や現在の入口から 1 手で届くのを標準にする。
+- 2 手かかるなら、中間面が目次や選択 hub として自然であること。
+- 3 手以上かかる主要導線は、設計の匂いとして一旦見直す。必要なら直リンク、breadcrumb, source note を足す。
+- GitHub の tab や AI が読める wrapper を、唯一の戻り道にしない。
+
 ## Worklog return
 
 作業後は、最低限この形で返す。

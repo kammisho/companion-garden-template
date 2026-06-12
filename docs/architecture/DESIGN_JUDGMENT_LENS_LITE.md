@@ -95,6 +95,7 @@ purpose, audience, device, primary action のどれかが曖昧で、
 - animation や motion が読みを邪魔する。
 - copy が container に合わず、意味の中心が欠ける。
 - 局所変更が隣の flow, state, return path を壊す。
+- primary action / trust info / source / return path が 3 手以上先にあり、人間が現在地や根拠を見失いそう。
 
 ## Ask-One-Question Triggers
 
@@ -111,6 +112,7 @@ purpose, audience, device, primary action のどれかが曖昧で、
 - 目的を持った ornament, oddness, slowness, friction。
 - user が domain convention を明らかに知っている場面。
 - exploratory draft。
+- AI-primary な packet / ledger / internal index。ここでは人間向け導線より、parse stability / exact scope / small target を優先してよい。
 - user が `ここは私の好みで決める` と置いたところ。
 
 ## Minimal Prompt
