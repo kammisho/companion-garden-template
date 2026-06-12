@@ -1,5 +1,7 @@
 # Companion Garden Template
 
+> English guide: [README.en.md](README.en.md)
+
 このひな形は、あなたの手元の AI を、  
 `設定を書いて終わり` ではなく、  
 `対話のなかで戻りながら、少しずつ育てていく` ための庭です。
