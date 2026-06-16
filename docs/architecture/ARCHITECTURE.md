@@ -16,6 +16,8 @@
   companion の圧縮核
 - Runtime Support:
   guide, optional shell / air layer, checklist, probes, observation を含む戻り道
+- Companion Ecology Seed:
+  古い ChatGPT 対話から、新しい ChatGPT Project / GPT へ response ecology を食べさせるための任意 seed
 - Evals:
   比較と実例観測
 - Worklog:
@@ -60,6 +62,7 @@
 - 外部ツール / 非公式拡張 / automation は、便利さより先に default-off, rollback, update path を見る
 - shared notes / whiteboard は、真実層ではなく `shared observation surface` として扱う
 - 古い素材を掘るときは、`発見` より `想起 / 再会` の姿勢を優先する
+- 古い ChatGPT 対話から新しい ChatGPT Project / GPT へ戻すときだけ、`COMPANION_ECOLOGY_SEED_LITE` で seed と feeding guide の一本道にする
 - 広い素材を読むときは、先に読む深さと止まりどころを決める
 - 板へ書くときは、未来の読み手に渡したい温度, 事実性, 返り先を薄く決める
 - 構造変更では、指示形をそのまま過剰施工せず、課題の高さを合わせて最小で効く変更にする
@@ -111,6 +114,7 @@
 - external tooling lite
 - shared observation surface
 - remembrance pattern
+- companion ecology seed lite
 - regrounding lite
 - target lock lite
 - read depth lite

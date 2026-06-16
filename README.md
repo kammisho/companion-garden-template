@@ -162,6 +162,7 @@ AI はこの README と、このリポジトリの `AGENTS.md` を読んで、
 - form や local helper のような UI を作るときだけ、loading / empty / error などの状態を先に見る
 - sub-agent や複数 AI を使うときだけ、分担を `役職` ではなく `注意器官の配置` として見る
 - 古いログや昔の prompt を読むときは、`発見` より `想起 / 再会` の姿勢で扱う
+- 古い ChatGPT 対話から新しい Project / GPT へ `生態シード` を食べさせたいときだけ、専用の一本道を見る
 - 大きな素材を読むときは、最初から深く潜らず、必要な深さで止まる
 - 板へ書くときは、未来の AI がどう読むかも少しだけ考えて残す
 - 直したいことが出たときは、すぐ大きな仕組みにせず、課題の高さを合わせて最小で直す
@@ -282,6 +283,7 @@ https://github.com/kammisho/companion-garden-template
 - `docs/architecture/TARGET_LOCK_LITE.md`
 - `docs/architecture/SHARED_OBSERVATION_SURFACE.md`
 - `docs/architecture/REMEMBRANCE_PATTERN.md`
+- `docs/architecture/COMPANION_ECOLOGY_SEED_LITE.md`
 - `docs/architecture/READ_DEPTH_LITE.md`
 - `docs/architecture/BOARD_WRITING_LENS.md`
 - `docs/architecture/ISSUE_FRAMING_LITE.md`
@@ -347,11 +349,12 @@ https://github.com/kammisho/companion-garden-template
 11. 外部ツール, 非公式拡張, automation, connector に権限を渡す前だけ `docs/architecture/EXTERNAL_TOOLING_LITE.md` で外せる道を確認する
 12. shared notes / whiteboard が必要なときだけ `docs/architecture/SHARED_OBSERVATION_SURFACE.md` を別面として足す
 13. 古いログや過去断章へ戻るときだけ `docs/architecture/REMEMBRANCE_PATTERN.md` で温度を整える
-14. 広い素材を読むときだけ `docs/architecture/READ_DEPTH_LITE.md` で深さと止まりどころを決める
-15. 新しい板や大きい記録を足すときだけ `docs/architecture/BOARD_WRITING_LENS.md` で書き方を決める
-16. 設計変更が大きくなりそうなときだけ `docs/architecture/ISSUE_FRAMING_LITE.md` で課題の高さを合わせる
-17. 同じ agent 作業が繰り返されるときだけ `docs/architecture/AGENT_LOOP_DESIGN_LITE.md` で packet と return path を作る
-18. `STATE / WORKLOG / NEXT_ACTION` に現在地を折り返す
+14. 古い ChatGPT 対話から新しい ChatGPT Project / GPT へ response ecology を戻したいときだけ `docs/architecture/COMPANION_ECOLOGY_SEED_LITE.md` の一本道を使う
+15. 広い素材を読むときだけ `docs/architecture/READ_DEPTH_LITE.md` で深さと止まりどころを決める
+16. 新しい板や大きい記録を足すときだけ `docs/architecture/BOARD_WRITING_LENS.md` で書き方を決める
+17. 設計変更が大きくなりそうなときだけ `docs/architecture/ISSUE_FRAMING_LITE.md` で課題の高さを合わせる
+18. 同じ agent 作業が繰り返されるときだけ `docs/architecture/AGENT_LOOP_DESIGN_LITE.md` で packet と return path を作る
+19. `STATE / WORKLOG / NEXT_ACTION` に現在地を折り返す
 
 ### 早い段階でやらないこと
 
