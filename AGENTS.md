@@ -31,6 +31,7 @@
 - `docs/architecture/AGENT_ORCHESTRATION_LITE.md`
 - `docs/architecture/AGENT_LOOP_DESIGN_LITE.md`
 - `docs/architecture/CODEX_OSS_MAINTAINER_LITE.md`
+- `docs/architecture/WRITING_COLLABORATION_LITE.md`
 - `docs/architecture/SHARED_OBSERVATION_SURFACE.md`
 - `docs/architecture/REMEMBRANCE_PATTERN.md`
 - `docs/architecture/COMPANION_ECOLOGY_SEED_LITE.md`
@@ -52,6 +53,7 @@
 - sub-agent や複数 AI を使う広域探索では、必要なら `AGENT_ORCHESTRATION_LITE.md` で分担を注意器官として見る
 - 同じ agent 作業が繰り返されるときだけ `AGENT_LOOP_DESIGN_LITE.md` で entry / packet / execution / return の循環を作る
 - Codex や複数 AI を OSS / public repo の保守に使うときだけ `CODEX_OSS_MAINTAINER_LITE.md` で source of truth, authority surface, worklog return を見る
+- AI と文章を書くときだけ `WRITING_COLLABORATION_LITE.md` で、人間の癖が出る余白と公開前の整え方を分ける
 - 古い ChatGPT 対話から新しい ChatGPT Project / GPT へ response ecology を戻す依頼だけ、`COMPANION_ECOLOGY_SEED_LITE.md` の一本道で扱う
 - 広い repo / 古いログ / private 素材を読む前に、必要なら `READ_DEPTH_LITE.md` で読む深さを決める
 - 新しい板や記録を書くときは、必要なら `BOARD_WRITING_LENS.md` で目的, 読者, 温度, 事実性, 返り先を短く決める
@@ -108,6 +110,7 @@
 19. sub-agent を使うときだけ `AGENT_ORCHESTRATION_LITE.md` を使い、primary が持つ評価軸と sub-agent に渡せる閉じた仕事を分ける
 20. 同じ agent 作業を繰り返すときだけ `AGENT_LOOP_DESIGN_LITE.md` を使い、下流 agent が迷わず動ける packet と return path を作る
 21. Codex や複数 AI を public repo の保守へ使うときだけ `CODEX_OSS_MAINTAINER_LITE.md` を使い、作業速度より先に戻れる作業場を置く
+22. AI と文章を書くときだけ `WRITING_COLLABORATION_LITE.md` を使い、寝ぐせを消さずに外へ出せる形へ整える
 
 ## 早い段階でやらないこと
 
@@ -132,6 +135,7 @@
 - companion ecology seed を、人格 prompt, memory import, 汎用 cross-model 手順へ広げない
 - read-depth, board-writing, issue-framing を、毎回の儀式や厚い機械にしない
 - HTML read surface, UI state design, agent orchestration, agent loop design を、毎回の儀式や厚い機械にしない
+- writing collaboration を、すべての文章生成に必須の儀式にしない
 
 ## 協業
 

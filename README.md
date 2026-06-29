@@ -161,6 +161,7 @@ AI はこの README と、このリポジトリの `AGENTS.md` を読んで、
 - Markdown や board を、人間が触れる HTML 面へ派生させたいときだけ、そのための小さい手すりを見る
 - form や local helper のような UI を作るときだけ、loading / empty / error などの状態を先に見る
 - sub-agent や複数 AI を使うときだけ、分担を `役職` ではなく `注意器官の配置` として見る
+- AI と文章を書くときだけ、`writing collaboration` の小さい手すりで人間の癖が出る余白と最後の整え方を見る
 - 古いログや昔の prompt を読むときは、`発見` より `想起 / 再会` の姿勢で扱う
 - 古い ChatGPT 対話から新しい Project / GPT へ `生態シード` を食べさせたいときだけ、専用の一本道を見る
 - 大きな素材を読むときは、最初から深く潜らず、必要な深さで止まる
@@ -293,6 +294,7 @@ https://github.com/kammisho/companion-garden-template
 - `docs/architecture/AGENT_ORCHESTRATION_LITE.md`
 - `docs/architecture/AGENT_LOOP_DESIGN_LITE.md`
 - `docs/architecture/CODEX_OSS_MAINTAINER_LITE.md`
+- `docs/architecture/WRITING_COLLABORATION_LITE.md`
 
 ### 運用の原則
 
@@ -354,7 +356,8 @@ https://github.com/kammisho/companion-garden-template
 16. 新しい板や大きい記録を足すときだけ `docs/architecture/BOARD_WRITING_LENS.md` で書き方を決める
 17. 設計変更が大きくなりそうなときだけ `docs/architecture/ISSUE_FRAMING_LITE.md` で課題の高さを合わせる
 18. 同じ agent 作業が繰り返されるときだけ `docs/architecture/AGENT_LOOP_DESIGN_LITE.md` で packet と return path を作る
-19. `STATE / WORKLOG / NEXT_ACTION` に現在地を折り返す
+19. AI と文章を書くときだけ `docs/architecture/WRITING_COLLABORATION_LITE.md` を使い、人間の癖が出る余白と公開前の整え方を分ける
+20. `STATE / WORKLOG / NEXT_ACTION` に現在地を折り返す
 
 ### 早い段階でやらないこと
 

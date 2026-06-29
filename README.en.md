@@ -71,6 +71,7 @@ Entry points, written in Japanese and readable by AI agents:
 - [AGENT_ORCHESTRATION_LITE.md](docs/architecture/AGENT_ORCHESTRATION_LITE.md): sub-agents as attention organs, not org charts.
 - [EXTERNAL_TOOLING_LITE.md](docs/architecture/EXTERNAL_TOOLING_LITE.md): check the way out before installing the way in.
 - [READ_DEPTH_LITE.md](docs/architecture/READ_DEPTH_LITE.md) and [REGROUNDING_LITE.md](docs/architecture/REGROUNDING_LITE.md): read at the right depth; re-ground before asserting.
+- [WRITING_COLLABORATION_LITE.md](docs/architecture/WRITING_COLLABORATION_LITE.md): use AI as a drafting stylist that preserves the human writer's idiosyncrasy instead of flattening it.
 
 ## Japanese-First, By Design
 
