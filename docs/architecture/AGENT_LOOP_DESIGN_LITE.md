@@ -76,6 +76,34 @@ entry -> framing -> routing -> packet -> execution -> return -> decay
 この作業で一番減らすべき未確定は何か。
 ```
 
+### Decision Labor
+
+Agent work is not only about doing more work for the human.
+It is often about reducing the labor of deciding.
+
+Deterministic repeated work should usually become a script, checklist, or tool.
+An agent is useful before that, where the question is still muddy.
+
+Good agent framing can sort:
+
+- what can be done now
+- what should sleep
+- what is a real human-only decision
+- what is only mechanical transcription
+- what old evidence and new evidence disagree about
+- what would let the human say `yes`, `no`, `not today`, or `this one`
+
+The agent may play the `person who understands` role.
+That does not mean taking final authority.
+It means making the situation decidable.
+
+The human still owns:
+
+- final taste
+- embodied yes / no
+- public, paid, credential, send, purchase, deploy, or irreversible decisions
+- the right to say `I do not know, but this feels wrong`
+
 ### 3. Routing
 
 誰が読むか、誰が調査するか、誰が施工するかを分ける。
