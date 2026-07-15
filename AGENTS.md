@@ -30,6 +30,7 @@
 - `docs/architecture/UI_STATE_DESIGN_LITE.md`
 - `docs/architecture/AGENT_ORCHESTRATION_LITE.md`
 - `docs/architecture/AGENT_LOOP_DESIGN_LITE.md`
+- `docs/architecture/WOVEN_PACKET_FABRIC_LITE.md`
 - `docs/architecture/CODEX_OSS_MAINTAINER_LITE.md`
 - `docs/architecture/WRITING_COLLABORATION_LITE.md`
 - `docs/architecture/SHARED_OBSERVATION_SURFACE.md`
@@ -52,6 +53,7 @@
 - form, local helper, 小さい UI を作るときだけ `UI_STATE_DESIGN_LITE.md` で操作の天気を置く
 - sub-agent や複数 AI を使う広域探索では、必要なら `AGENT_ORCHESTRATION_LITE.md` で分担を注意器官として見る
 - 同じ agent 作業が繰り返されるときだけ `AGENT_LOOP_DESIGN_LITE.md` で entry / packet / execution / return の循環を作る
+- 人間が一件ずつ packet を運べない量になったときだけ `WOVEN_PACKET_FABRIC_LITE.md` を開き、queue を永続化し worker と権限を bounded にする
 - Codex や複数 AI を OSS / public repo の保守に使うときだけ `CODEX_OSS_MAINTAINER_LITE.md` で source of truth, authority surface, worklog return を見る
 - AI と文章を書くときだけ `WRITING_COLLABORATION_LITE.md` で、人間の癖が出る余白と公開前の整え方を分ける
 - 古い ChatGPT 対話から新しい ChatGPT Project / GPT へ response ecology を戻す依頼だけ、`COMPANION_ECOLOGY_SEED_LITE.md` の一本道で扱う

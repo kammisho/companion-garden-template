@@ -75,6 +75,30 @@ sub-agent へ渡すときは、短く固定する。
 返答は file path と理由だけで十分です。
 ```
 
+## Human Authority / Mechanical Work
+
+人間が持つ最終権限と、実際に手を動かす担当を分ける。
+
+人間が握るもの:
+
+- 何を許可し、何を採用するか
+- どの authority surface を開くか
+- public / paid / credential / irreversible action を許可するか
+- 最後の taste と acceptance
+
+AIへ渡せるもの:
+
+- 明示された scope の file edit, transcription, test, verification
+- visible working delta の生成
+- authorization に含まれる場合の commit / push
+- 人間が判断できる diff / receipt の作成
+
+人間が権限を持つことは、長い生成文を人間が copy / paste することを意味しない。
+安全な file-edit surface があるなら、AI が差分を作り、`git diff` または同等の差分面を
+review surface にする。
+
+委譲された mechanical work は、最終権限の移譲ではない。
+
 ## Primary が外へ行く場合
 
 人間組織では、本部が残り、斥候が外へ行くことが多い。
@@ -123,3 +147,5 @@ sub-agent は、増やすほど賢くなるわけではない。
 
 - `AGENT_LOOP_DESIGN_LITE.md`:
   分担を一回で終わらせず、entry / packet / execution / return の循環にする札。
+- `WOVEN_PACKET_FABRIC_LITE.md`:
+  一件ずつの分担では運べない量になったとき、queue と worker の流通面を見る札。

@@ -70,6 +70,7 @@
 - 操作できる UI を作るときは、先に `UI_STATE_DESIGN_LITE` で必要な状態だけを見る
 - sub-agent や複数 AI を使うときは、`AGENT_ORCHESTRATION_LITE` で primary の評価軸と sub-agent の閉じた仕事を分ける
 - 同じ agent 作業が繰り返されるときは、`AGENT_LOOP_DESIGN_LITE` で entry / packet / execution / return の循環を作る
+- 小さい loop が大量に並び、人間の packet 運搬が律速になったときだけ、`WOVEN_PACKET_FABRIC_LITE` で durable queue / disposable worker / approval state を設計する
 - Codex や複数 AI を public repo / OSS 保守へ使うときは、`CODEX_OSS_MAINTAINER_LITE` で source of truth, authority surface, worklog return を見る
 - AI と文章を書くときは、必要なら `WRITING_COLLABORATION_LITE` で人間の癖が出る余白と最後の整え方を分ける
 
@@ -125,6 +126,7 @@
 - ui state design lite
 - agent orchestration lite
 - agent loop design lite
+- woven packet fabric lite
 - codex oss maintainer lite
 - writing collaboration lite
 
