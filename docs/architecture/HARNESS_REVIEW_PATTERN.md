@@ -45,6 +45,31 @@
 
 へ薄く分類してから扱う。
 
+## Harness を分散した間取りとして読む
+
+harnessの強さは、一つのpromptやsettings fileだけに入っているとは限らない。
+
+- rules:
+  常時守る境界とdefault
+- hooks:
+  特定の節目で止める条件
+- lifecycle:
+  start, resume, compact, finishの戻り道
+- verification:
+  実行後に現物へ戻るcheck
+
+問題が起きたとき、すべてを長い指示文へ追記しない。
+
+- 毎回必要なことはrules
+- action直前だけ必要なことはhook
+- 再開や終了の問題はlifecycle
+- 実装と現物のずれはverification
+
+へ置く。
+
+同じ禁止文を複数層へ重ねる前に、最初に失敗を止められる層を一つ選ぶ。
+一つの層へ全責任を集めず、戻り道と検証を別の層に持たせる。
+
 ## First Safe Moves
 
 1. まず `素材 / 指示 / 未分類` を分ける

@@ -99,6 +99,15 @@ user の方向を保ったまま、課題の高さを合わせる。
 - 小さい変更で足りる場面に architecture を増やすこと
 - 不安を軽視して何もしないこと
 
+## Related Layers
+
+- `BOUNDARY_LOAD_LITE.md`:
+  issue heightではなく、source / authority / privacy / routing / return formatを同時に抱えているときに開く。
+- `DESIGN_JUDGMENT_LENS_LITE.md`:
+  visual / UI指定がsurfaceの目的を弱めるときに開く。
+- `FRONTEND_MEANS_KPI_LITE.md`:
+  目的は決まっているが、作り方が発散しているときに開く。
+
 ## 一言
 
 `言われたとおりに作る` と `勝手に大きく作る` の間に、

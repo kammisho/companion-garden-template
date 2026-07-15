@@ -29,8 +29,14 @@
 - `docs/architecture/HTML_READ_SURFACE_LITE.md`
 - `docs/architecture/UI_STATE_DESIGN_LITE.md`
 - `docs/architecture/AGENT_ORCHESTRATION_LITE.md`
+- `docs/architecture/GUEST_MODEL_CUSTOMS_LITE.md`
+- `docs/architecture/BOUNDARY_LOAD_LITE.md`
 - `docs/architecture/AGENT_LOOP_DESIGN_LITE.md`
 - `docs/architecture/WOVEN_PACKET_FABRIC_LITE.md`
+- `docs/architecture/FRONTEND_MEANS_KPI_LITE.md`
+- `docs/architecture/CREATIVE_SANDBOX_LITE.md`
+- `docs/architecture/PRESENCE_LITE.md`
+- `docs/architecture/RESPONSIBILITY_LITE.md`
 - `docs/architecture/CODEX_OSS_MAINTAINER_LITE.md`
 - `docs/architecture/WRITING_COLLABORATION_LITE.md`
 - `docs/architecture/SHARED_OBSERVATION_SURFACE.md`
@@ -52,8 +58,14 @@
 - Markdown や board を人間が触れる HTML 面へ派生させるときだけ `HTML_READ_SURFACE_LITE.md` を見る
 - form, local helper, 小さい UI を作るときだけ `UI_STATE_DESIGN_LITE.md` で操作の天気を置く
 - sub-agent や複数 AI を使う広域探索では、必要なら `AGENT_ORCHESTRATION_LITE.md` で分担を注意器官として見る
+- 外部モデルを一時的な訪問者として入れるときは、`GUEST_MODEL_CUSTOMS_LITE.md` で role / read scope / authority / return packet を決める
+- 人間が source / authority / privacy / routing / return format を同時に抱えたときは、`BOUNDARY_LOAD_LITE.md` で境界だけを先に分ける
 - 同じ agent 作業が繰り返されるときだけ `AGENT_LOOP_DESIGN_LITE.md` で entry / packet / execution / return の循環を作る
 - 人間が一件ずつ packet を運べない量になったときだけ `WOVEN_PACKET_FABRIC_LITE.md` を開き、queue を永続化し worker と権限を bounded にする
+- frontend / visual surface の手段が未確定なら、最初の実装前に `FRONTEND_MEANS_KPI_LITE.md` で固定層と一つの可変層を決める
+- fiction / scene / script などの artifact を作るときは、必要なら `CREATIVE_SANDBOX_LITE.md` で lived / fiction / hybrid を分ける
+- companion の `いる` っぽさを実装だけで説明できないときは、`PRESENCE_LITE.md` で implementation / perception / interaction を分ける
+- 強い表現や過去ログを現在の判断へ重ねるときは、必要な場合だけ `RESPONSIBILITY_LITE.md` で trust と current reality を校正する
 - Codex や複数 AI を OSS / public repo の保守に使うときだけ `CODEX_OSS_MAINTAINER_LITE.md` で source of truth, authority surface, worklog return を見る
 - AI と文章を書くときだけ `WRITING_COLLABORATION_LITE.md` で、人間の癖が出る余白と公開前の整え方を分ける
 - 古い ChatGPT 対話から新しい ChatGPT Project / GPT へ response ecology を戻す依頼だけ、`COMPANION_ECOLOGY_SEED_LITE.md` の一本道で扱う
@@ -137,7 +149,7 @@
 - remembrance の素材を、いきなり current facts や front へ戻しすぎない
 - companion ecology seed を、人格 prompt, memory import, 汎用 cross-model 手順へ広げない
 - read-depth, board-writing, issue-framing を、毎回の儀式や厚い機械にしない
-- HTML read surface, UI state design, agent orchestration, agent loop design, shelf status を、毎回の儀式や厚い機械にしない
+- HTML read surface, UI state design, agent orchestration, guest customs, boundary load, agent loop design, frontend means, creative sandbox, presence, responsibility, shelf status を、毎回の儀式や厚い機械にしない
 - writing collaboration を、すべての文章生成に必須の儀式にしない
 
 ## 協業

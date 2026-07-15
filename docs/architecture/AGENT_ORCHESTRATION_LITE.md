@@ -145,6 +145,8 @@ sub-agent は、増やすほど賢くなるわけではない。
 
 ## Related
 
+- `GUEST_MODEL_CUSTOMS_LITE.md`:
+  外部モデルを訪問者として入れる前に、role / scope / authority / return packet を決める札。
 - `AGENT_LOOP_DESIGN_LITE.md`:
   分担を一回で終わらせず、entry / packet / execution / return の循環にする札。
 - `WOVEN_PACKET_FABRIC_LITE.md`:

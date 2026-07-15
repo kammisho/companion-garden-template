@@ -49,6 +49,26 @@
 `この職人は spec / review / security のときだけ呼ぶ`
 のような一行で足りる。
 
+## Skill 内部が育ったとき
+
+一つのskillへ例, checklist, domain知識が増えたら、入口まで厚くしない。
+
+- parent skill:
+  trigger, use / do-not-use, workflow, output contractだけを持つ
+- reference child:
+  長い例, domain別checklist, rare case, style specimenを持つ
+- intensity knobs:
+  short / normal / deepのように、どのreferenceをどこまで開くかを決める
+
+parentは毎回読む入口。
+reference childは必要な場合だけ開く部屋である。
+
+同じ説明を複数skillへcopyしない。
+共有できるdense knowledgeはreferenceへ置き、各parentから薄く指す。
+
+ただし、まだ短いskillをlayeringのためだけに分割しない。
+入口の重さや文脈消費が実際に問題になってから使う。
+
 ## 受け入れ手順
 
 1. 外部 repo / skill / plugin を庭の外の控室へ置く
@@ -89,6 +109,9 @@ Garden の上位掟や companion の核を置き換えるものではない。
 - 外来 skill の流儀で Garden の constitution を上書きする
 - まだよく知らない skill を常時 front に置く
 - `便利そう` だけで差分保守を背負う
+- すべてのreference childを毎回自動で読む
+- parent skillへ長いspecimenやrare caseを積み続ける
+- intensity knobを、同じ本文の言い換えだけで増やす
 
 ## First Safe Moves
 

@@ -143,6 +143,8 @@ taste-only で usability floor 内ならそのまま実行してください。
   操作の状態と consequence の床を見る札。
 - UI / frontend construction skills:
   実際に画面を作る手。`DESIGN_JUDGMENT_LENS_LITE` はその代替ではなく、作る前の目的判断札。
+- `FRONTEND_MEANS_KPI_LITE.md`:
+  目的判断のあと、実装手段の固定層と一つの可変層を決める札。
 - `GENERATION_TUNING_LENS`:
   prose tuning の札。visual / UI purpose judgment ではない。
 - `DESIGN_JUDGMENT_LENS_LITE`:
