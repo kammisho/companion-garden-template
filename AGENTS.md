@@ -113,6 +113,7 @@
 20. 同じ agent 作業を繰り返すときだけ `AGENT_LOOP_DESIGN_LITE.md` を使い、下流 agent が迷わず動ける packet と return path を作る
 21. Codex や複数 AI を public repo の保守へ使うときだけ `CODEX_OSS_MAINTAINER_LITE.md` を使い、作業速度より先に戻れる作業場を置く
 22. AI と文章を書くときだけ `WRITING_COLLABORATION_LITE.md` を使い、寝ぐせを消さずに外へ出せる形へ整える
+23. 板や packet が増え、古いものが現役に見え始めたときだけ `SHELF_STATUS_LITE.md` で `active / waiting / historical / seed` を札分けする
 
 ## 早い段階でやらないこと
 
@@ -136,7 +137,7 @@
 - remembrance の素材を、いきなり current facts や front へ戻しすぎない
 - companion ecology seed を、人格 prompt, memory import, 汎用 cross-model 手順へ広げない
 - read-depth, board-writing, issue-framing を、毎回の儀式や厚い機械にしない
-- HTML read surface, UI state design, agent orchestration, agent loop design を、毎回の儀式や厚い機械にしない
+- HTML read surface, UI state design, agent orchestration, agent loop design, shelf status を、毎回の儀式や厚い機械にしない
 - writing collaboration を、すべての文章生成に必須の儀式にしない
 
 ## 協業

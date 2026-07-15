@@ -286,6 +286,8 @@ WOVEN_PACKET_FABRIC_LITE.mdを読み、まず工場化すべきか診断して�
   外部 tool へ権限を渡す前に rollback と update path を見る。
 - `HARNESS_REVIEW_PATTERN.md`:
   素材と指示、authority surface、local irreversible boundary を分ける。
+- `SHELF_STATUS_LITE.md`:
+  closed packet, waiting seed, dead-letter を active circulation から下ろす。
 
 ## One Line
 
