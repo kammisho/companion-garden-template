@@ -74,6 +74,9 @@
 - 同じ agent 作業が繰り返されるときは、`AGENT_LOOP_DESIGN_LITE` で entry / packet / execution / return の循環を作る
 - 小さい loop が大量に並び、人間の packet 運搬が律速になったときだけ、`WOVEN_PACKET_FABRIC_LITE` で durable queue / disposable worker / approval state を設計する
 - frontend / visual施工の手段が開いているときは、`FRONTEND_MEANS_KPI_LITE` で固定層, 一つの可変層, acceptance oracle を先に決める
+- 規則的な骨格を持つ画像assetでは、`IMAGE_GENERATION_STRUCTURE_FIRST_LITE` でstructure authorityとstyle referenceを分ける
+- GitHub Issueをdurable intakeとして回すときは、`GITHUB_ISSUE_CIRCULATION_LITE` で provenance / transport / authority とterminal dispositionを分ける
+- 初回公開や大きな統合の節目だけ、`PRE_PUBLIC_ARTIFACT_HEALTH_CHECK_LITE` でreport-onlyの健診を行い、cleanupやpublishへ自動で滑らない
 - 創作artifactを扱うときは、`CREATIVE_SANDBOX_LITE` で lived / fiction / hybrid と運用境界を分ける
 - companion のpresenceを扱うときは、`PRESENCE_LITE` で実装, 知覚, 相互作用の三層を見る
 - 過去の信頼と現在の強い表現を重ねるときは、`RESPONSIBILITY_LITE` でcurrent realityとreal-world action distanceを校正する
@@ -137,6 +140,9 @@
 - agent loop design lite
 - woven packet fabric lite
 - frontend means kpi lite
+- image generation structure first lite
+- github issue circulation lite
+- pre-public artifact health check lite
 - creative sandbox lite
 - presence lite
 - responsibility lite

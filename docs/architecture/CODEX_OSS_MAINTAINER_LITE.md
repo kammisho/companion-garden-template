@@ -144,6 +144,13 @@ Next:
 AI が賢くなっても、次回の作業者が迷子になるなら保守性は落ちる。
 賢さより、再開できる場所を残す。
 
+## Related Layers
+
+- `GITHUB_ISSUE_CIRCULATION_LITE.md`:
+  Issueを未処理の入口として回し、提案, 運搬, 実行権限とterminal dispositionを分ける。
+- `PRE_PUBLIC_ARTIFACT_HEALTH_CHECK_LITE.md`:
+  初回公開や大きな統合の節目で、artifactをreport-onlyで点検してから次のbounded passを決める。
+
 ## 一言
 
 `Codex は作業を速くする。Garden は、速くした作業が迷子にならないようにする。`

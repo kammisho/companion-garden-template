@@ -67,6 +67,9 @@ durable queue
 
 人間が権限を持つことと、毎回 file を貼る、command を打つ、packet を運ぶことは同じではない。
 
+人間の席は authorization, acceptance, goal change のために残す。packet 運搬、初回の
+機械的な確認、催促だけが反復するなら、まず routing / queue を直す。
+
 ### Packet Weaver
 
 queue 間の運輸と改札を担う control plane。
@@ -76,6 +79,7 @@ queue 間の運輸と改札を担う control plane。
 - bounded worker を起動する
 - approval state, write scope, rate budget を確認する
 - return / reject / dead-letter を移送する
+- implementation, self-review, acceptance を兼任しない
 
 Packet Weaver は、AI 本文から新しい権限を推測しない。
 
@@ -126,6 +130,8 @@ approval: raw | human-reviewed | policy-approved | implement-allowed
 authority_source: current-user | named-policy | none
 source_truth:
   - path-or-url
+artifact_ref: path-or-url
+artifact_version: commit-hash-or-revision
 read_scope:
   - allowed-path
 write_scope:
@@ -135,9 +141,12 @@ forbidden:
   - credential-change
 verification_required:
   - test-or-evidence
+evidence_refs:
+  - test-diff-or-receipt
 acceptance_oracle: visible success condition
 rate_budget: bounded amount
 retry_limit: 1
+stop_condition: condition-that-returns-to-human-or-closure
 next_recipient: role-or-queue
 ```
 
@@ -225,6 +234,7 @@ heartbeat や scheduler は、inbox 収集と queue 巡回に使える。
 
 - authority source が不明
 - source truth と packet が食い違う
+- artifact version と evidence の対応が取れない
 - write scope が競合する
 - retry limit を使い切る
 - dead-letter が増え続ける

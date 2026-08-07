@@ -78,6 +78,15 @@ layout, motion, asset style, typographyを同時に開かない。
 形や意味を持つ物体をassetにするか、codeで描くかを先に決める。
 光, motion, state changeのような動きをcodeへ寄せる場合も、境界を一行で書く。
 
+### established icon grammar
+
+標準的な操作・状態・方向の記号は、即興SVGを描かず、既存design systemまたは検収済みicon libraryから選ぶ。
+一方で、世界内の物体、固有の道具、branded markは、その操作記号へ還元しない。
+
+- icon一個のためにruntime dependencyやCDNを足さない
+- icon-only controlにはaccessible nameを置き、状態はcode側で持つ
+- どちらの役か曖昧なら、実寸の比較面で意味の速さと材質適合を見てから凍らせる
+
 ### dependency gate
 
 見えているissueを、現在の層で判断できるかを見る。
@@ -108,6 +117,19 @@ layout, motion, asset style, typographyを同時に開かない。
 - local CSS fixからlayout contractへ戻る
 - one-off patchからreusable componentへ上げる
 
+## Means Revalidation
+
+手段を凍らせることは、最初の選択を永久の正典にすることではない。
+通常の継続施工では開き直さず、phase境界でだけ一度、今の手段そのものを見直す。
+
+- prototypeからproduction / maintenanceへ移る
+- 自作の配線や検収環境が、目的機能より高くつく
+- 同じ初期制約が複数箇所の局所補修を生む
+- 目的、寿命、または運用条件が変わる
+
+そのときは `constraint / current phase / KEEP・RELAX・SPLIT・MIGRATE / review again` を短く残す。
+再審査は移行の自動命令ではない。`KEEP` も、いまの費用で選び直した判断にする。
+
 ## Visual Dependency Pass
 
 見た目のissueが出ても、すぐに `大きくする / 明るくする / 動かす` へ翻訳しない。
@@ -119,6 +141,15 @@ layout, motion, asset style, typographyを同時に開かない。
 5. frozenな足場に対して、一変数だけ比較する
 
 別surfaceの未実装物を、名前が近いだけで待ち条件にしない。
+
+## Local Visual Review
+
+local HTML artifactは、sourceや`file://`だけで見たことにしない。
+必要なときはtarget directoryだけを、loopback-onlyの`127.0.0.1`で一時previewし、実画面を読む。
+
+- LAN向けbind、publish、deploy、external shareへ広げない
+- previewが終わったらserverを止める
+- 固定portが使われていたら、別portへ逃げる前に既存processを確認する
 
 ## Object Evidence
 
@@ -136,11 +167,102 @@ marker, badge, sprite, animated propのような画面内オブジェクトは�
 `front layerへ移した` は、画面上で対象の前を通った証拠ではない。
 acceptanceは実際のscreen-spaceで取る。
 
+## Minimum Decision-Bearing Iteration
+
+一周は、diffを最小にする単位ではなく、次の判断を一つ閉じられる最小の現物にする。
+開く前に、次だけを置く。
+
+```text
+decision question:
+minimum valid artifact:
+acceptance evidence:
+stop or escalate:
+```
+
+見ても何を選ぶか分からないなら小さすぎる。複数の独立した問いが残るなら大きすぎる。
+一周で一つの不確実性を閉じるか、一つの製法を証拠つきで棄却できればよい。
+
+## Visual Model Desk / 人間がつまめる比較面
+
+自然言語、静止した比較画像、実装現物のあいだで意図が落ちるときは、万能editorを
+作らない。actual artifactと同じstate / viewportを下敷きに、**一つの可変層だけ**を
+人間が短時間につまんで比べる、一時的な模型机を置く。
+
+- 画面内anchor、crop、scale、密度のように、screen-spaceでしか答えが出ない層へ使う
+- controlは一つの意味上のvariable layerに閉じ、他のlayoutや材質を同時に開かない
+- 候補を横並び、または短い往復で実物比較し、言葉だけから値を推定し続けない
+- 戻すものは単一の数値ではなく、`method / variable layer / adopted recipe / evidence`。
+  後の施工者が同じ比較条件を再現できる形にする
+
+模型机はtranslation surfaceであってproduction UIではない。値の自動保存、sourceへの
+書き戻し、production edit、採用、公開のauthorizationを生まない。比較が済んだら、
+採用と伝播はそれぞれの明示gateへ返す。任意CSS editor、恒久的なlayout builder、
+万能なdesign toolへ育てない。
+
+## Pre-Human Visual Release Gate
+
+人間のtaste / acceptanceへ完成候補を渡す前に通す。
+人間の目が最終oracleであっても、最初の崩れ探し係にしない。
+
+1. makerが実renderを、対象stateとviewportで見る
+2. artifact version、state、viewport、必要なscreen evidenceを束ねる
+3. freshな別席が、同じ現物をreport-onlyで見る
+4. 明白なREDだけを一回のbounded repairへ返す
+5. その後にhuman tasteが最終acceptanceをする
+
+independent reviewが用意できないときは、`self-reviewed only` と明記する。
+reviewerは新しい目的や好みを実装せず、見つけたことを返すだけに留まる。
+
+### source roles and visual payload
+
+標本やreferenceを別surfaceへ渡すときは、何が正本なのかを短く分ける。
+
+- accepted specimenは、明示承認された意図の正本であり、pixel配置の複製命令ではない
+- current artifactは、受け入れ側の状態・文脈・後続行動の正本である
+- issue / packetは、問いとallowed / forbidden surfaceを固定する境界であり、実行権限を生まない
+
+画像、実寸比較、または時間変化を見たことで判断が変わるなら、それは文章要約で置き換えず、versioned visual payloadとして運ぶ。
+最小のcarrierを選び、`path / version / source role / viewport / state / verdict` を添える。
+下流のreviewはsourceやDOMを読むだけでなく、carrierを実際にrenderして見る。必要なsourceが欠けるなら、言い換えから再生成せず止まる。
+
+### accepted specimen propagation
+
+別artifactやproduction surfaceへ伝播するのは、`planned for propagation` かつ `explicitly accepted` の差分だけである。
+sourceの意図をcurrent artifactへ翻訳し、どちらかをliteral copyして済ませない。
+
+- `source unit -> target unit`、`must preserve`、`may adapt` を短く対応付ける
+- source / targetを同じstate、viewport、modalityで対にして見る
+- proxy、描画省略、現行保持、未判定の差分は伝播要件に昇格させない
+
+source、対応付け、paired evidenceのどれかが欠けるなら、propagationはGREENにしない。
+
+## QA Coverage Ceiling
+
+Pre-Human gateは検収の床であり、毎回full regressionを要求する札ではない。
+evidenceを集める前に、範囲を短く凍らせる。
+
+```text
+qa target:
+coverage ceiling:
+escalate only if:
+explicitly unverified:
+```
+
+通常は、変更した契約と最も壊れやすい隣接面を一つだけ見る。
+coverage ceilingの外を見ていないことは`UNVERIFIED`であって、今回のREDではない。
+共通層の変更、観測された横断regression、または明示したrelease条件があるときだけ広げる。
+範囲外で偶然見えた既存事項は、明白なartifact blockerでない限り今回のREDへ上げない。
+
 ## Avoid
 
 - 作業中にframeworkやasset方式を毎回開き直す
+- phase境界の再審査をせず、初期制約を惰性で守る
 - 一つの比較で複数層を同時に変える
+- 標準操作記号を毎回手描きし、icon一個のために外部依存を足す
 - 人間のtasteを、要件充足や実装努力で代用する
+- render前の画面を人間へ最初の視覚QAとして渡す
+- current-only evidenceや要約だけから、標本伝播のGREENを返す
+- coverage ceilingの外を自動で全館監査に広げる
 - 未来の全画面を確定しないと局所施工できない形にする
 - personaやpromptを増やすことで手段未決定をごまかす
 - ordinary continuationでpreflightを毎回やり直す
@@ -152,6 +274,9 @@ acceptanceは実際のscreen-spaceで取る。
 deliverable, frozen layers, variable layer one, asset/code boundary,
 dependency gate, acceptance oracle, option budget, escalation conditionを短く固定します。
 施工中はfrozen layersを開き直さず、同じ方式が二度落ちたときだけ方式の層を上げてください。
+phase境界で手段の賞味期限が切れていそうなときだけ、KEEP / RELAX / SPLIT / MIGRATEを選び直してください。
+人間へ完成候補を渡す前に、renderしたevidenceをmakerとfreshなreport-only席で見てください。
+qa targetとcoverage ceilingを先に置き、範囲外はUNVERIFIEDとして明記してください。
 ```
 
 ## Related Layers
@@ -162,6 +287,12 @@ dependency gate, acceptance oracle, option budget, escalation conditionを短く
   操作と状態の契約を置く。
 - `HTML_READ_SURFACE_LITE.md`:
   Markdownやboardから、人間向けの派生面を作る。
+- `AGENT_ORCHESTRATION_LITE.md`:
+  freshなreport-only reviewのscopeとreturnを閉じる。
+- `CODEX_OSS_MAINTAINER_LITE.md`:
+  public maintenanceでsourceとauthorityの境界を守る。
+- `IMAGE_GENERATION_STRUCTURE_FIRST_LITE.md`:
+  規則的な画像assetで、画風より先に部品・接続・状態対応を成立させる。
 - `ISSUE_FRAMING_LITE.md`:
   meansではなくissue heightが滑っている場合に開く。
 

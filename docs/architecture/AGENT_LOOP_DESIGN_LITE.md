@@ -123,6 +123,24 @@ human:
 
 `AGENT_ORCHESTRATION_LITE.md` は、この routing を詳しく見る札。
 
+### Durable State, Ephemeral Roles
+
+複数の席をまたぐ loop では、役割や会話を正本にしない。
+
+残すのは最小限でよい。
+
+- source truth と対象 artifact の版
+- evidence と verdict
+- 現在の authority / gate
+- stop condition と次の return 先
+
+dispatcher はこの状態を読んで、一件の bounded packet を次席へ渡す役である。
+自分で施工し、その結果を自分で検収し、GREEN や採用を出す役ではない。
+worker / reviewer / dispatcher は必要な一周だけ現れ、結果と証拠を残して閉じる。
+
+一回で閉じる作業のために台帳を増やさない。packet 運搬や版照合が反復して人間の負担に
+なったときだけ、`WOVEN_PACKET_FABRIC_LITE.md` の durable queue を検討する。
+
 ### 4. Packet
 
 下流 agent が迷わず動ける形へ畳む。

@@ -25,6 +25,7 @@
 - `docs/architecture/READ_DEPTH_LITE.md`
 - `docs/architecture/BOARD_WRITING_LENS.md`
 - `docs/architecture/ISSUE_FRAMING_LITE.md`
+- `docs/architecture/GITHUB_ISSUE_CIRCULATION_LITE.md`
 - `docs/architecture/EXTERNAL_TOOLING_LITE.md`
 - `docs/architecture/HTML_READ_SURFACE_LITE.md`
 - `docs/architecture/UI_STATE_DESIGN_LITE.md`
@@ -34,10 +35,12 @@
 - `docs/architecture/AGENT_LOOP_DESIGN_LITE.md`
 - `docs/architecture/WOVEN_PACKET_FABRIC_LITE.md`
 - `docs/architecture/FRONTEND_MEANS_KPI_LITE.md`
+- `docs/architecture/IMAGE_GENERATION_STRUCTURE_FIRST_LITE.md`
 - `docs/architecture/CREATIVE_SANDBOX_LITE.md`
 - `docs/architecture/PRESENCE_LITE.md`
 - `docs/architecture/RESPONSIBILITY_LITE.md`
 - `docs/architecture/CODEX_OSS_MAINTAINER_LITE.md`
+- `docs/architecture/PRE_PUBLIC_ARTIFACT_HEALTH_CHECK_LITE.md`
 - `docs/architecture/WRITING_COLLABORATION_LITE.md`
 - `docs/architecture/SHARED_OBSERVATION_SURFACE.md`
 - `docs/architecture/REMEMBRANCE_PATTERN.md`
@@ -63,6 +66,7 @@
 - 同じ agent 作業が繰り返されるときだけ `AGENT_LOOP_DESIGN_LITE.md` で entry / packet / execution / return の循環を作る
 - 人間が一件ずつ packet を運べない量になったときだけ `WOVEN_PACKET_FABRIC_LITE.md` を開き、queue を永続化し worker と権限を bounded にする
 - frontend / visual surface の手段が未確定なら、最初の実装前に `FRONTEND_MEANS_KPI_LITE.md` で固定層と一つの可変層を決める
+- 規則的な骨格を持つ画像assetを生成するときだけ `IMAGE_GENERATION_STRUCTURE_FIRST_LITE.md` で構造と画風を別工程にする
 - fiction / scene / script などの artifact を作るときは、必要なら `CREATIVE_SANDBOX_LITE.md` で lived / fiction / hybrid を分ける
 - companion の `いる` っぽさを実装だけで説明できないときは、`PRESENCE_LITE.md` で implementation / perception / interaction を分ける
 - 強い表現や過去ログを現在の判断へ重ねるときは、必要な場合だけ `RESPONSIBILITY_LITE.md` で trust と current reality を校正する
@@ -72,6 +76,8 @@
 - 広い repo / 古いログ / private 素材を読む前に、必要なら `READ_DEPTH_LITE.md` で読む深さを決める
 - 新しい板や記録を書くときは、必要なら `BOARD_WRITING_LENS.md` で目的, 読者, 温度, 事実性, 返り先を短く決める
 - 設計 / 編集 / 施工の依頼では、必要なら `ISSUE_FRAMING_LITE.md` で課題の高さを合わせてから最小変更へ落とす
+- GitHub Issueを未処理の入口として運用するときは、必要なら `GITHUB_ISSUE_CIRCULATION_LITE.md` で提案者, 運搬者, 実行権限とterminal dispositionを分ける
+- 初回公開や大きな統合の節目でartifact全体を点検するときだけ、`PRE_PUBLIC_ARTIFACT_HEALTH_CHECK_LITE.md` をreport-onlyで開く
 - file / repo / 日付 / worklog の断言前には、必要な source へ一回だけ戻る
 - tool や file 探索のあとは、いま触ったものの報告より先に、最新の user request へ checked fact を持ち帰る
 
@@ -126,6 +132,9 @@
 21. Codex や複数 AI を public repo の保守へ使うときだけ `CODEX_OSS_MAINTAINER_LITE.md` を使い、作業速度より先に戻れる作業場を置く
 22. AI と文章を書くときだけ `WRITING_COLLABORATION_LITE.md` を使い、寝ぐせを消さずに外へ出せる形へ整える
 23. 板や packet が増え、古いものが現役に見え始めたときだけ `SHELF_STATUS_LITE.md` で `active / waiting / historical / seed` を札分けする
+24. GitHub Issueをdurable intakeとして回すときだけ `GITHUB_ISSUE_CIRCULATION_LITE.md` を使い、Issue作成と施工許可を分ける
+25. 初回公開, 大きな統合, 新しいnetwork surfaceの節目だけ `PRE_PUBLIC_ARTIFACT_HEALTH_CHECK_LITE.md` を開き、まず分類receiptで止める
+26. 規則構造のある画像assetで同じ骨折が二度続いたときだけ `IMAGE_GENERATION_STRUCTURE_FIRST_LITE.md` を開き、promptを積む前にmeansを選び直す
 
 ## 早い段階でやらないこと
 
@@ -149,7 +158,7 @@
 - remembrance の素材を、いきなり current facts や front へ戻しすぎない
 - companion ecology seed を、人格 prompt, memory import, 汎用 cross-model 手順へ広げない
 - read-depth, board-writing, issue-framing を、毎回の儀式や厚い機械にしない
-- HTML read surface, UI state design, agent orchestration, guest customs, boundary load, agent loop design, frontend means, creative sandbox, presence, responsibility, shelf status を、毎回の儀式や厚い機械にしない
+- HTML read surface, UI state design, agent orchestration, guest customs, boundary load, agent loop design, frontend means, image-generation structure-first, GitHub Issue circulation, pre-public health check, creative sandbox, presence, responsibility, shelf status を、毎回の儀式や厚い機械にしない
 - writing collaboration を、すべての文章生成に必須の儀式にしない
 
 ## 協業
