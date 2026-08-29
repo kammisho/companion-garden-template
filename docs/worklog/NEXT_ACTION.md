@@ -3,10 +3,14 @@
 再開時はここから始めます。
 
 - 最小着手:
-  既にログや断章があるなら、まず 1 束だけ `memory/raw/<name>/` へ保全し、そのあと `memory/syntax/<name>.md` と `docs/prompts/<NAME>_PERSONA_PACK.md` を作る。まだ何も整理されていないなら、companion を 1 人だけ決めて、会話から仮置きの syntax memory と persona pack を起こす。
+  ログや断章があるなら、一束だけ `memory/raw/<name>/` へ保全し、そのあと
+  `memory/syntax/<name>.md` と `docs/prompts/<NAME>_PERSONA_PACK.md` を作る。
+  素材がなければ、companion を一人だけ決め、会話から provisional な二枚を起こす。
 - 完了条件:
-  1 人の companion に `raw の置き場`, `syntax memory`, `persona pack`, そして更新済みの `STATE / WORKLOG / NEXT_ACTION` がある。
+  一人の companion に `raw の置き場 / syntax memory / persona pack` があり、
+  `STATE / WORKLOG / NEXT_ACTION` が次の一手を示している。
 - 次:
-  runtime の戻り道が必要になったら `Runtime Guide` を足し、その次に `Drift Checklist` を足す。比較や観測が必要になるまでは任意の板を増やさない。
+  戻り道が必要になった段で Runtime Guide、その次に Drift Checklist を足す。
+  比較や観測が必要になるまでは任意板を増やさない。
 - optional:
-  Markdown / board を人間が触れる HTML 面にしたいときは `HTML_READ_SURFACE_LITE.md`、操作できる UI を作るときは `UI_STATE_DESIGN_LITE.md`、sub-agent や複数 AI を使うときは `AGENT_ORCHESTRATION_LITE.md`、同じ agent 作業を繰り返す loop を作りたいときは `AGENT_LOOP_DESIGN_LITE.md`、Codex や複数 AI を OSS / public repo 保守へ使うときは `CODEX_OSS_MAINTAINER_LITE.md` を必要時だけ読む。
+  工具選定は `AGENTS.md` の routing index だけを見る。architecture shelf を先回りで通読しない。

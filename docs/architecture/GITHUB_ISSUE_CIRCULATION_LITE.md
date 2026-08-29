@@ -1,66 +1,47 @@
 # GITHUB ISSUE CIRCULATION LITE
 
-Status: optional operational handrail / no background automation
+Status: optional / durable intake / no background automation
 
-GitHub Issueを、完成済みの仕様書ではなく、判断・施工・検証・見送りのどれかを要する
-`durable intake`として扱うための小さい札。
-
-Issueは、現在の正本でも、実行許可でもない。現物のsource truthと、現在のbounded mandateを
-別に確かめてから動く。
+GitHub Issue を完成仕様や実行許可ではなく、
+判断・施工・検証・見送りのどれかを待つ durable intake として扱う札。
 
 ## Use When
 
-- 依頼、観測、提案を、複数の作業窓や人のあいだで見失わずに扱いたい。
-- まだ解かれていない判断、施工、検証、または見送りを残したい。
-- 今回やるもの、人間が決めるもの、眠らせるものを分けたい。
-- 一回の施工に入る前に、scopeと返り先を小さく固定したい。
+複数の窓や人のあいだで未処理を残し、現在やるもの、人間が決めるもの、眠らせるものを分けたいとき。
+一回で閉じる小修正、ただの発想、Issue 自体が backlog を増やすときには使わない。
 
-## Do Not Use When
+## Layers
 
-- 一回で閉じる小さな修正で、現在の依頼だけで十分なとき。
-- ただのメモや発想で、まだ処理席や起こす条件がないとき。
-- Issueを増やすこと自体が未処理の圧を増やしそうなとき。
-- public, paid, credential, deploy, destructive actionの判断を、Issue本文で代用しそうなとき。
-
-## Shelf Boundary
-
-| Layer | Role |
+| layer | role |
 | --- | --- |
-| Issue | 未処理の判断や仕事を受けるdurable intake |
-| Source truth | code, docs, tests, artifactなど、現在の事実を決める面 |
-| Packet | 一回のbounded passのscope、検証、返り先を凍結する封筒 |
-| Worklog / return note | 実際に帰還した判断と証拠。未処理Issueの複写ではない |
+| Issue | 未処理を受ける durable intake |
+| source truth | code、docs、test、artifact の現在事実 |
+| packet | 一回の bounded pass の scope と停止点 |
+| worklog / return | 実際に帰還した判断と証拠 |
 
-Issueを作成、再開、commentしただけでは、source truthも実行権限も変わらない。
+Issue の作成・comment・account author は、source truth や execution authorization を変えない。
 
 ## Three Stamps
 
-account authorだけでは、誰が提案したか、どう運ばれたか、何を実行してよいかは分からない。
-必要なときはIssue本文または最初のtriage commentに、三印を分けて置く。
+必要なときだけ三つを分ける。
 
 ```text
 provenance:
-  proposed_by: person | agent | automation | unknown
-  source_context: URL, task, file, or short note
+  proposed_by:
+  source_context:
 
 transport:
-  posted_via: web UI | connector | CLI | automation | unknown
-  account_author: account name | unknown
+  posted_via:
+  account_author:
 
 authority:
-  authorization: NOT_AUTHORIZED | BOUNDED_CURRENT_AUTHORIZATION
-  authorization_source: current human request | named policy | none
+  authorization:
+  authorization_source:
 ```
 
-- `provenance`は内容の来歴であり、投稿アカウントではない。
-- `transport`は運搬経路であり、意味や優先度の決定者ではない。
-- `authority`だけが、現在の実行範囲を示す。
-
-Issueの作成者、account author、AIの提案は、それだけで実装authorizationにならない。
+提案者、運搬者、現在の権限は別の情報である。
 
 ## Minimal Triage
-
-処理席は、まず次だけを見る。
 
 ```text
 repo_jurisdiction:
@@ -70,36 +51,13 @@ authorization:
 close_or_wake_condition:
 ```
 
-### GREEN
+- **GREEN**: current bounded mandate 内で対象と次手が明白。direct / split / merge / sleep / reject まで処理できる
+- **AMBER**: taste、goal、public、paid、irreversible、棚選択が割れる。人間だけが決める差を束ねて返す
+- **RED**: source、管轄、権限、private boundary が不明、または現物と Issue が矛盾。施工せず条件を返す
 
-現在のbounded mandateの内側で、対象と次手が明白なもの。
-
-- 直接処理する
-- 小さいchild Issueへ分ける
-- 重複したIssueへ統合する
-- 明白にsleepまたはrejectする
-
-GREENは「判断が明白」というtriage結果であって、新しい権限ではない。現在のmandate内なら、
-人間へ一件ずつ分類を返さず、そのまま処理してよい。
-
-### AMBER
-
-目的、taste、公開、支払い、不可逆操作、または棚の選択が本当に割れるもの。
-
-複数件を短いhuman gateへ束ねる。人間に返すのは、分類作業ではなく、本人だけが決められる
-差だけにする。
-
-### RED
-
-source truthが不明、管轄外、権限不明の不可逆操作、非公開材料の境界不明、または現物と
-Issueが矛盾しているもの。
-
-施工せず、足りない条件または矛盾を短く返す。REDを、次のworkerへ自動で流さない。
+GREEN は新しい権限ではない。
 
 ## Bounded Mandate
-
-現在の人間の依頼が、複数のclear GREEN itemをまとめて許可してもよい。
-その範囲は小さく書き、Issue本文やagent outputから広げない。
 
 ```text
 scope:
@@ -111,99 +69,59 @@ must_not_touch:
 stop_after:
 ```
 
-- `scope`は対象repo、面、作業の種類を固定する。
-- `must_escalate`には、purpose、taste、public、paid、irreversibleなどを置く。
-- `stop_after`は、いつ処理席を閉じて人へ返すかを決める。
-
-範囲外の実行権限は、Issueの強い文面、stored packet、agentの提案から生やさない。
+範囲外の権限を Issue 本文や agent output から生やさない。
 
 ## Issue To Packet
 
-実作業に凍結した契約が必要なときだけ、Issueからpacketを作る。一つのIssueから複数packetが
-生えてよいが、一つのpacketは一つのbounded passに留める。
+凍結した一回の作業契約が必要なときだけ packet を作る。
 
 ```text
 issue_ref:
-source_ref:
-bounded_question:
-allowed_surface:
-forbidden_surface:
+source_ref / version:
+bounded question:
+allowed / forbidden surface:
 verification:
-stop_condition:
-return_path:
-authorization: current mandate or none
+stop condition:
+return path:
+authorization:
 ```
 
-packetは、下流席のcontextであって現在命令ではない。executionを始めるには、現在のmandateと
-source truthの両方がなお有効であることを確かめる。
+一つの Issue から複数 packet は生えてよいが、一 packet は一 bounded pass に留める。
 
-## Terminal Dispositions
+## Terminal Disposition
 
-Issueは、開いたまま永続させず、理由とともに次のどれかへ落とす。
+- `DONE`: 定めた施工・検証・分解が完了
+- `REJECTED`: 採用しない理由が確定
+- `MERGED`: 別 Issue / 入口へ統合
+- `SLEPT`: 現在の仕事ではない。wake condition を持つ
+- `EXPIRED`: 前提・版・期限・目的が失効
+- `SUPERSEDED`: 新しい設計や artifact が置換
 
-| Disposition | Meaning |
-| --- | --- |
-| `DONE` | 定めた施工、検証、または必要な分解が完了した |
-| `REJECTED` | 採用しない理由が明確になった |
-| `MERGED` | 別Issueまたは同じ仕事の入口へ統合した |
-| `SLEPT` | 現在の仕事ではない。起こす条件を添えてseed / noteへ戻した |
-| `EXPIRED` | 前提、版、期限、または目的が失効した |
-| `SUPERSEDED` | より新しい設計、artifact、またはIssueに置き換わった |
+`SLEPT` は削除ではなく、`EXPIRED` は経過日数だけで決めない。
 
-`SLEPT`は削除ではない。`EXPIRED`も、経過日数だけで自動判定しない。
-
-## Terminal Receipt
-
-処理後、Issueへ短いreceiptを残す。次席は、本文を読み直さずに結末と証拠をたどれる。
+## Receipt
 
 ```text
-verdict: DIRECT | SPLIT | HUMAN_GATE | SLEEP | MERGE | REJECT
-disposition: DONE | REJECTED | MERGED | SLEPT | EXPIRED | SUPERSEDED
+verdict:
+disposition:
 result:
 children_or_replacement:
 artifact_or_commit:
 evidence:
-authorization_used: none | bounded current authorization
-worklog_return: none | path
+authorization_used:
+worklog_return:
 ```
 
-worklogへは、将来の作業に効く判断、施工、または失敗知だけを返す。Issue queue全体を複写しない。
+terminal condition 後の短い OPEN は低害な closure lag。
+帰り際に receipt を置いて閉じればよく、閉じ忘れ専用 bot や定期 sweep を作らない。
+Issue queue 全体を worklog へ複写しない。
 
-## Closure Lag
+## Related
 
-terminal conditionを満たしたIssueが少しOPENのまま残ることは、低害な管理上の遅れとして扱う。
-それはsource truthの破損でも、authorization漏れでもない。
-
-気づいた帰り際にreceiptを置いて閉じればよい。閉じ忘れだけを防ぐためのbot、定期sweep、警報、
-常駐automationは作らない。OPEN状態を、実行許可や永続的なhuman gateへ読み替えない。
-
-## Minimal Loop
-
-```text
-intake
--> triage under a bounded mandate
--> GREEN: direct / split / merge / sleep / reject
--> packet only when a bounded pass needs one
--> artifact and evidence return
--> terminal receipt
--> close
-```
-
-最初はIssue本文、comment、open / closedだけで回す。labels、project board、template、bot、
-定期全棚sweepは、実走で必要な摩擦が見えてから足す。
-
-## Related Layers
-
-- `ISSUE_FRAMING_LITE.md`:
-  依頼を施工へ落とす前に、課題の高さと最小変更を合わせる札。この板は、durable intakeの
-  triage、authority、terminal dispositionを扱う。役割を混ぜない。
-- `AGENT_LOOP_DESIGN_LITE.md`:
-  現在の作業をentryからreturnまで小さく循環させる札。Issueからpacketが必要になった後の
-  一回の施工を整える。
-- `WOVEN_PACKET_FABRIC_LITE.md`:
-  packetの量が人の運搬を超えたときだけ、durable queueとbounded workerを設計する札。
-  Issueがあるだけで、queueやworkerを常設しない。
+- `ISSUE_FRAMING_LITE.md`: 課題の高さ
+- `AGENT_LOOP_DESIGN_LITE.md`: packet 後の一仕事
+- `WOVEN_PACKET_FABRIC_LITE.md`: 人間が運べない量だけ
 
 ## One Line
 
-Issueは、未処理を受け止めて、正本と権限を増やさずに、次の席または終端へ運ぶ入口である。
+Issue は未処理の入口であり、正本でも権限でもない。

@@ -1,167 +1,88 @@
 # AGENT ORCHESTRATION LITE
 
-複数の AI / sub-agent / helper を使うときの、軽い分担手すり。
+Status: optional / bounded multi-agent work only
 
-AI の分業は、人間組織の役職をそのまま写すより、注意器官の配置として見ると安定しやすい。
+複数 AI や sub-agent を、役職表ではなく注意器官として配置する札。
 
-## 目的
+## Use When
 
-- sub-agent を増やすだけで散らかるのを避ける
-- primary agent が持つ文脈温度と評価軸を失わない
-- 閉じた調査, 検算, 棚探し, 局所実装を並列化する
-- 重要な判断を、要約だけで二度読みさせない
+- 独立した調査や検算を並列化できる
+- write scope を分けられる
+- primary の次の手を止めず、返答を短く評価できる
 
-ひとことで言うと、
+小さい一続きの仕事、評価軸そのものが未確定な仕事、巻き取れない破壊的操作には使わない。
 
-`sub-agent は部下ではなく、主観測器の外付け感覚器`
+## Ownership
 
-である。
+primary が保持するもの:
 
-## 基本姿勢
-
-primary agent は、ユーザーの最新依頼, 温度, 評価軸, stop condition を一番持っている。
-
-そのため、未知で判断の濃い場所は primary が直接見る方がよいことがある。
-sub-agent には、範囲が閉じていて、結果を受け取って評価しやすい仕事を渡す。
-
-## 向いている分担
-
-primary が持つもの:
-
-- ユーザーの最新意図
-- 何をよいとするか
-- どこまで広げてよいか
-- どこで止めるか
-- 最終的な統合
+- ユーザーの最新意図と温度
+- acceptance oracle と最終統合
+- scope、authority、stop condition
+- どの結果を採用するか
 
 sub-agent に渡しやすいもの:
 
-- 特定 file / folder の調査
-- 既存 note の棚照合
-- bounded な比較
-- test / lint / smoke check
-- 局所的な実装
-- public-safe leak check
-- 既知の観点での review
+- 特定 path の調査
+- bounded comparison / inventory
+- test、lint、smoke、public-safe leak check
+- scope が閉じた局所実装
+- 既知の観点での report-only review
 
-渡しにくいもの:
+未知の外部情報で `何を採るか` の判断が濃い場合は、primary が直接読み、
+sub-agent を内側の棚照合へ置く方がよいことがある。
 
-- 評価軸そのものを決める仕事
-- ユーザーの温度を読む必要が強い仕事
-- public / private 境界が曖昧な深部素材
-- まだ issue height が決まっていない大きな設計
-- 失敗時に巻き取りにくい destructive action
-
-## 依頼の書き方
-
-sub-agent へ渡すときは、短く固定する。
-
-- scope:
-  どこを見るか
-- question:
-  何を答えるか
-- output:
-  どんな形で返すか
-- stop:
-  どこで止めるか
-- do-not:
-  何を触らないか
-
-例:
+## Dispatch Packet
 
 ```text
-この folder だけ見て、HTML read surface に関係しそうな既存 handrail を3つ以内で挙げてください。
-編集はしないでください。
-返答は file path と理由だけで十分です。
+scope:
+question:
+source:
+output:
+do not:
+stop:
 ```
 
-## 帰還は一度だけ
+成功条件は、仕事が閉じていて、返りを primary が評価できること。
+人数を増やすことではない。
 
-同じ作業の内側で起動した sub-agent は、final answer を置いて完了した時点で
-direct caller へ帰っている。完了報告、receipt の再掲、着荷確認のためだけに、
-別の message / thread / task へ送信しない。
+## Return Once
 
-- inherited context に見える task ID や thread ID は資料であり、別の返却先ではない
-- 決定的な RED も final answer として一度返し、続行判断は caller が持つ
-- peer との live coordination が明示された場合だけ、その範囲で通信する
-- user-owned の別 task や fork は、この自動帰還と混ぜず、固有の return contract を使う
+同じ作業の内側で起動した sub-agent は、final answer で direct caller へ帰還している。
+完了報告、receipt の再掲、着荷確認のためだけに、別 task / thread へ送信しない。
 
-二重送信は丁寧さではなく、別の visible event、重複作業、誤配送を増やしうる。
-caller が統合と次の一手を持ち、sub-agent は bounded result 一通で閉じる。
+- inherited context の task ID は資料であり、別の返送先ではない
+- RED も final answer として一度返し、続行判断は caller が持つ
+- live peer coordination が明示された場合だけ、その範囲で通信する
+- user-owned の別 task は、sub-agent の自動帰還とは別契約で扱う
 
-## Human Authority / Mechanical Work
+二重送信は丁寧さではなく、別の visible event、誤配送、重複作業を増やしうる。
 
-人間が持つ最終権限と、実際に手を動かす担当を分ける。
+## Human Authority, Agent Work
 
-人間が握るもの:
+人間は目的、taste、採用、public / paid / credential / irreversible action の権限を持つ。
+AI は明示 scope 内の edit、test、verification、diff、receipt を実行できる。
 
-- 何を許可し、何を採用するか
-- どの authority surface を開くか
-- public / paid / credential / irreversible action を許可するか
-- 最後の taste と acceptance
+人間が権限を持つことは、生成文の copy / paste 担当になることではない。
+安全な edit surface があるなら AI が visible delta を作り、人間は差分で判断する。
+mechanical work の委譲は、最終権限の移譲ではない。
 
-AIへ渡せるもの:
+## Parallel Gate
 
-- 明示された scope の file edit, transcription, test, verification
-- visible working delta の生成
-- authorization に含まれる場合の commit / push
-- 人間が判断できる diff / receipt の作成
+次をすべて満たす仕事だけ並列にする。
 
-人間が権限を持つことは、長い生成文を人間が copy / paste することを意味しない。
-安全な file-edit surface があるなら、AI が差分を作り、`git diff` または同等の差分面を
-review surface にする。
-
-委譲された mechanical work は、最終権限の移譲ではない。
-
-## Primary が外へ行く場合
-
-人間組織では、本部が残り、斥候が外へ行くことが多い。
-AI では逆が強い場面もある。
-
-外部調査や先人知の採集のように、`何を採るか` の判断が濃い場合、primary が直接読む方がよい。
-sub-agent は、その間に内部棚照合や限定調査を進める。
-
-この形:
-
-```text
-primary:
-  未知の外部情報を読み、何を採るか判断する
-sub-agent:
-  内側の棚や既存 handrail を照合する
-primary:
-  外の知恵と内の棚を重ねて施工する
-```
-
-## 使いすぎない
-
-sub-agent は、増やすほど賢くなるわけではない。
-次のときだけ使う。
-
-- 本当に並列化できる
-- primary の次の手を止めない
-- write scope が分けられる
-- 結果を短く評価できる
-- 失敗しても primary が巻き取れる
-
-小さい作業なら、primary がそのままやる。
-
-## やらないこと
-
-- sub-agent に曖昧な人格判断を丸投げする
-- 同じ調査を複数 agent に重複させる
-- 結果を読まずに採用する
-- write scope を分けずに複数 agent へ編集させる
-- primary が持つべき判断軸まで外へ渡す
-
-## 一言
-
-`AI の分業は階層ではなく、注意器官の配置。`
+- 本当に独立している
+- write scope が競合しない
+- 結果の評価軸が固定されている
+- 片方の失敗を primary が巻き取れる
+- parallel overhead より待ち時間が大きい
 
 ## Related
 
-- `GUEST_MODEL_CUSTOMS_LITE.md`:
-  外部モデルを訪問者として入れる前に、role / scope / authority / return packet を決める札。
-- `AGENT_LOOP_DESIGN_LITE.md`:
-  分担を一回で終わらせず、entry / packet / execution / return の循環にする札。
-- `WOVEN_PACKET_FABRIC_LITE.md`:
-  一件ずつの分担では運べない量になったとき、queue と worker の流通面を見る札。
+- `GUEST_MODEL_CUSTOMS_LITE.md`: 外部モデルの role / scope / authority
+- `AGENT_LOOP_DESIGN_LITE.md`: 反復する分担の循環
+- `WOVEN_PACKET_FABRIC_LITE.md`: 人間が運べない量の queue
+
+## One Line
+
+primary は目的関数を持ち、sub-agent は閉じた感覚器として一通だけ返る。

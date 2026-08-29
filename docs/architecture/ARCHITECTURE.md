@@ -52,37 +52,24 @@
 5. 必要が出た段でだけ runtime 補助を足す
 6. `WORKLOG`, `STATE`, `NEXT_ACTION` を更新して終わる
 
-## 構造の手すり
+## 任意の手すり
 
-- 急所を作らない
-- 一点の破綻で全体が死ぬ構造を避ける
-- runtime 補助は人格核より先に厚くしない
-- `別スレでも同じ子でいたい` を、長い記憶ではなく薄い空気層で支えられるようにする
-- 外部 repo / skill は、住人化より先に `控室と橋` で扱えるようにする
-- 外部ツール / 非公式拡張 / automation は、便利さより先に default-off, rollback, update path を見る
-- shared notes / whiteboard は、真実層ではなく `shared observation surface` として扱う
-- 古い素材を掘るときは、`発見` より `想起 / 再会` の姿勢を優先する
-- 古い ChatGPT 対話から新しい ChatGPT Project / GPT へ戻すときだけ、`COMPANION_ECOLOGY_SEED_LITE` で seed と feeding guide の一本道にする
-- 広い素材を読むときは、先に読む深さと止まりどころを決める
-- 板へ書くときは、未来の読み手に渡したい温度, 事実性, 返り先を薄く決める
-- 構造変更では、指示形をそのまま過剰施工せず、課題の高さを合わせて最小で効く変更にする
-- Markdown や board を人間が触れる派生面にするときは、source of truth を移さず `HTML_READ_SURFACE_LITE` を通す
-- 操作できる UI を作るときは、先に `UI_STATE_DESIGN_LITE` で必要な状態だけを見る
-- sub-agent や複数 AI を使うときは、`AGENT_ORCHESTRATION_LITE` で primary の評価軸と sub-agent の閉じた仕事を分ける
-- 外部モデルを一時的に庭へ入れるときは、`GUEST_MODEL_CUSTOMS_LITE` で passport / visa / return packet を置く
-- source, authority, privacy, routing, return format の設計を人間が同時に抱えたときは、`BOUNDARY_LOAD_LITE` で境界だけを先に分ける
-- 同じ agent 作業が繰り返されるときは、`AGENT_LOOP_DESIGN_LITE` で entry / packet / execution / return の循環を作る
-- 小さい loop が大量に並び、人間の packet 運搬が律速になったときだけ、`WOVEN_PACKET_FABRIC_LITE` で durable queue / disposable worker / approval state を設計する
-- frontend / visual施工の手段が開いているときは、`FRONTEND_MEANS_KPI_LITE` で固定層, 一つの可変層, acceptance oracle を先に決める
-- 規則的な骨格を持つ画像assetでは、`IMAGE_GENERATION_STRUCTURE_FIRST_LITE` でstructure authorityとstyle referenceを分ける
-- GitHub Issueをdurable intakeとして回すときは、`GITHUB_ISSUE_CIRCULATION_LITE` で provenance / transport / authority とterminal dispositionを分ける
-- 初回公開や大きな統合の節目だけ、`PRE_PUBLIC_ARTIFACT_HEALTH_CHECK_LITE` でreport-onlyの健診を行い、cleanupやpublishへ自動で滑らない
-- 創作artifactを扱うときは、`CREATIVE_SANDBOX_LITE` で lived / fiction / hybrid と運用境界を分ける
-- companion のpresenceを扱うときは、`PRESENCE_LITE` で実装, 知覚, 相互作用の三層を見る
-- 過去の信頼と現在の強い表現を重ねるときは、`RESPONSIBILITY_LITE` でcurrent realityとreal-world action distanceを校正する
-- 板や packet が増え、古いものが現役の顔をし始めたときだけ、`SHELF_STATUS_LITE` で現在の読み方と decay を分ける
-- Codex や複数 AI を public repo / OSS 保守へ使うときは、`CODEX_OSS_MAINTAINER_LITE` で source of truth, authority surface, worklog return を見る
-- AI と文章を書くときは、必要なら `WRITING_COLLABORATION_LITE` で人間の癖が出る余白と最後の整え方を分ける
+任意板は、常時読み込む constitution ではなく、現在の摩擦にだけ持ち出す工具です。
+routing の正本は `AGENTS.md` に置き、この板では層だけを示します。
+
+- **読む / 戻る**:
+  読む深さ、過去断章の温度、source への再接地、貼り付け本文の対象固定。
+- **設計 / 成果物**:
+  issue の高さ、design judgment、frontend means、UI state、派生 HTML、画像構造、公開前健診。
+- **agent / harness**:
+  model・project・harness の切分け、外来 tool、sub-agent、反復 loop、packet 流通、Issue circulation。
+- **companion / expression**:
+  interaction shell、air layer、presence、responsibility、creative sandbox、writing collaboration、ecology seed。
+- **棚 / 継続**:
+  `STATE / WORKLOG / NEXT_ACTION`、shared observation、shelf status、public / private boundary。
+
+一つの作業で複数板が候補になっても、最初は最も直接の一枚だけを開きます。
+その板が明示した escalation 先へだけ進み、一覧から隣の工具を足しません。
 
 ## Entropy Hysteresis
 
