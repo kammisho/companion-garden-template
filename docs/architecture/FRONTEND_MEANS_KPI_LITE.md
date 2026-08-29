@@ -151,6 +151,30 @@ local HTML artifactは、sourceや`file://`だけで見たことにしない。
 - previewが終わったらserverを止める
 - 固定portが使われていたら、別portへ逃げる前に既存processを確認する
 
+## Existing UI Is a Behavior Bundle
+
+既存 UI や interaction を復元するときは、静止画の類似や一つの hover だけで合格にしない。
+変更前の挙動を、少なくとも次の束として観測する。
+各 state は `exists / not applicable / explicitly unverified` に分け、元になかった挙動を発明しない。
+
+| state | 見るもの |
+| --- | --- |
+| `normal` | 初期表示、階層、hit area、現在地 |
+| `hover` | pointer で現れる変化と、離れたときの戻り |
+| `open` | 展開内容、背景との関係、close / escape / outside click |
+| `focus` | keyboard 順序、`focus-visible`、Enter / Space での操作 |
+| `hash` | deep link、reload、back / forward、閉じた後の URL |
+| `motion` | start、transition、endpoint、interrupt 後の state |
+| `reduced-motion` | 動きに依存せず同じ意味へ届く代替と media query の反映 |
+
+代表経路を `normal -> hover / focus -> open -> close / back` の順方向で辿り、
+hash 付き reload と戻る操作で逆方向も見る。各 state について、trigger、visible result、
+URL または persisted state、return path、evidence を短く残す。
+
+今回触らない state は先に `explicitly_unverified` として範囲外へ置いてよい。
+ただし `既存 interaction の復元` を納品物にしたなら、観測済みの挙動束から一つ落ちることは
+visual similarity で相殺できない。要素が存在することと、その要素が以前の仕事をすることを分けて検収する。
+
 ## Object Evidence
 
 marker, badge, sprite, animated propのような画面内オブジェクトは、内部stateだけで合格にしない。

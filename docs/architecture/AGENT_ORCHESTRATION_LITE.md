@@ -75,6 +75,20 @@ sub-agent へ渡すときは、短く固定する。
 返答は file path と理由だけで十分です。
 ```
 
+## 帰還は一度だけ
+
+同じ作業の内側で起動した sub-agent は、final answer を置いて完了した時点で
+direct caller へ帰っている。完了報告、receipt の再掲、着荷確認のためだけに、
+別の message / thread / task へ送信しない。
+
+- inherited context に見える task ID や thread ID は資料であり、別の返却先ではない
+- 決定的な RED も final answer として一度返し、続行判断は caller が持つ
+- peer との live coordination が明示された場合だけ、その範囲で通信する
+- user-owned の別 task や fork は、この自動帰還と混ぜず、固有の return contract を使う
+
+二重送信は丁寧さではなく、別の visible event、重複作業、誤配送を増やしうる。
+caller が統合と次の一手を持ち、sub-agent は bounded result 一通で閉じる。
+
 ## Human Authority / Mechanical Work
 
 人間が持つ最終権限と、実際に手を動かす担当を分ける。

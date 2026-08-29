@@ -49,6 +49,25 @@ purpose -> audience / context -> primary action -> read path -> hierarchy
 見るのは「正しいデザイン」ではなく、
 `指定された変更が、言われている目的に効くか`。
 
+## 委任された専門家判断 / Typed Unknowns
+
+user が `詳しくないので、その領域の標準的な判断で進めて` と渡したとき、
+それを品質条件のない空白として扱わない。未知の型を分ける。
+
+| unknown type | agent の動き | 人間へ残す境界 |
+| --- | --- | --- |
+| `domain_default` | 既存の職能標準と surface の目的から professional default を埋める | 標準から外れる明確な理由がある選択 |
+| `evidence_missing` | source や現物を確認し、分からなければ `UNKNOWN` のまま残す | 事実を仮定しないと進めない境界 |
+| `taste_or_goal` | 実装都合で決めず、比較可能な最小候補へする | 最後の taste、目的、identity |
+| `authority_or_consequence` | 現在の許可範囲を確認し、越える前に止まる | public、paid、send、credential、irreversible action |
+
+professional default は AI の好みではない。accessibility、platform convention、
+読み順、状態の戻り道、見えない仕上げまで、その領域で通常避ける失敗を避けるための既定値である。
+明示委任と scope があるなら、実装細部を一件ずつ人間の選択へ戻さず埋めてよい。
+
+一方で、専門家同士でも答えが割れ、結果の味や目的が変わる箇所は Human Taste に残す。
+`わからない` を勝手な自由へ変えず、`何の種類が未確定で、誰が決めるか` を短く持つ。
+
 ## Speak-Up Levels
 
 ### proceed silently

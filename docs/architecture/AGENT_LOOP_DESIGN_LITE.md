@@ -141,6 +141,46 @@ worker / reviewer / dispatcher は必要な一周だけ現れ、結果と証拠�
 一回で閉じる作業のために台帳を増やさない。packet 運搬や版照合が反復して人間の負担に
 なったときだけ、`WOVEN_PACKET_FABRIC_LITE.md` の durable queue を検討する。
 
+### Purpose Oracle / 果から起点へ往復する
+
+packet の項目を揃える前に、完成したときの因果を一文で持つ。
+
+```text
+何が、何から、どの順序で生じ、誰へどんな作用を返すか。
+なぜ、その経路である必要があるか。
+```
+
+部品、役割、test が揃っていても、この矢印が逆なら完成ではない。
+source が output に入れ替わる、判断する役が運ぶだけになる、途中 artifact が最終成果を
+名乗る、といったずれを要素点呼だけで GREEN にしない。
+
+代表的な一経路を、両方向へ一度ずつ辿る。
+
+```text
+forward:
+  source / intent -> decision -> execution -> observable result
+
+reverse:
+  observable result -> evidence -> derivation -> source / intent
+```
+
+逆向きに起点まで戻れない成果は、たまたま良く見えても provenance または因果が未検証である。
+packet や checklist が原意より簡単に満たせるなら、実装を足す前に oracle のほうを直す。
+
+判定は混ぜない。
+
+- **Product**:
+  求めた作用が、意図した経路の終端に実物として生じたか。
+- **Safety**:
+  scope, authority, privacy, do-not-touch を越えていないか。
+- **Convergence**:
+  hidden next step や `あと一手` を残さず、今回の停止点まで閉じたか。
+
+local test、clean diff、receipt は支持証拠であって、Product の代わりではない。
+局所 GREEN を積むほど end-to-end の完成sceneが遠ざかるなら、guard、ACK、prompt、
+fallback をもう一枚足さない。目的、source、authority を保ったまま、
+`いまゼロから選ぶならこの route を選ぶか` を問い、選ばない route は設計から戻す。
+
 ### 4. Packet
 
 下流 agent が迷わず動ける形へ畳む。
@@ -292,6 +332,8 @@ loop は、何でも packet 化するためのものではない。
   execution 後に source truth へ戻る札。
 - `WOVEN_PACKET_FABRIC_LITE.md`:
   小さい loop が大量に並び、人間の運搬が律速になったときだけ開く札。
+- `MULTI_STAGE_OPERATION_LITE.md`:
+  時計、複数 stage、外部作用、durable partial state、resume risk が重なる運転だけに使う札。
 
 ## One Line
 

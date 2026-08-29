@@ -70,6 +70,38 @@ harnessの強さは、一つのpromptやsettings fileだけに入っていると
 同じ禁止文を複数層へ重ねる前に、最初に失敗を止められる層を一つ選ぶ。
 一つの層へ全責任を集めず、戻り道と検証を別の層に持たせる。
 
+## 症状を model / project / harness に分ける
+
+AI の失敗を見たとき、最初から model の性格や能力へ帰属させない。
+
+- **model**:
+  同じ model-visible context を受けた生成、推論、選択の挙動。
+- **project**:
+  repo の source truth、project file、local instruction、対象版、customization。
+- **harness**:
+  app / runtime、tool invocation、message routing、context injection、lifecycle、UI projection。
+
+どの層で事実が変わったかを固定してから直す。project file が変わった事故を prompt の癖と呼んだり、
+routing で落ちた message を model の無視と呼んだりしない。
+
+次の四状態も同一ではない。
+
+```text
+tool success
+actual delivery
+model-visible
+UI-visible
+```
+
+- `tool success` は call が成功応答を返した状態。正しい target への作用までは証明しない。
+- `actual delivery` は target 側の read や現物状態で payload を確認した状態。
+- `model-visible` は destination model の文脈へ入った状態。送信済みや UI 表示だけでは代用しない。
+- `UI-visible` は人間向けの画面に投影された状態。model が見たことや外部作用の成立までは証明しない。
+
+四つは別々の evidence を持つ。target ID、artifact version、payload digest、観測時刻を揃え、
+どの境界までは通り、最初にどこで不一致になったかを見る。失敗した境界が分かる前に、
+再送、model 交換、長い指示追加、synthetic receipt で覆わない。
+
 ## First Safe Moves
 
 1. まず `素材 / 指示 / 未分類` を分ける
