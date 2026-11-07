@@ -26,7 +26,7 @@
 | file / repo / 日付の断言、tool 後の返答枝 | `docs/architecture/REGROUNDING_LITE.md` |
 | prompt 本文や長い貼り付けを主対象として受ける | `docs/architecture/TARGET_LOCK_LITE.md` |
 | 広い repo、古いログ、private 素材を読む | `docs/architecture/READ_DEPTH_LITE.md`。過去断章の温度が要るときだけ `docs/architecture/REMEMBRANCE_PATTERN.md` |
-| 新しい板や大きい記録を書く | `docs/architecture/BOARD_WRITING_LENS.md` |
+| 新しい板や大きい記録を書く、技術・運用文で目的・失敗・停止条件を未来へ渡す | `docs/architecture/BOARD_WRITING_LENS.md` |
 | 指定された修正の高さや目的が滑りそう | `docs/architecture/ISSUE_FRAMING_LITE.md`。visual / UI の目的判断だけ `docs/architecture/DESIGN_JUDGMENT_LENS_LITE.md` |
 | frontend / visual の手段が未確定 | `docs/architecture/FRONTEND_MEANS_KPI_LITE.md`。操作 state は `docs/architecture/UI_STATE_DESIGN_LITE.md`、派生 HTML は `docs/architecture/HTML_READ_SURFACE_LITE.md` |
 | 規則構造のある画像 asset | `docs/architecture/IMAGE_GENERATION_STRUCTURE_FIRST_LITE.md` |

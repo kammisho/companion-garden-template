@@ -103,6 +103,24 @@ Garden の上位掟や companion の核を置き換えるものではない。
 - not to replace:
   何はこの skill に渡さないか
 
+## Example: technical writing skill
+
+- source:
+  [Kuden writing Skill](https://github.com/shokai/agent-skills/blob/main/plugins/kuden/skills/writing/SKILL.md)
+- role:
+  技術文書で、目的、失敗、理由の掛かり先を同じ向きに読める文へ直す
+- fit:
+  失われた働きを失敗の述語にし、曖昧な成功語を検収可能な動詞へ替える
+- call timing:
+  worklog、architecture、README、comment、PR、receipt で未来の作業者へ判断を渡すときだけ使う
+- not to replace:
+  raw、引用、lived dialogue、persona voice、創作、既存文書の local style
+- return:
+  `BOARD_WRITING_LENS.md` の `判定可能な技術文`
+
+この例では外部 Skill 本体を install、vendor、fork しない。
+出典を残し、再利用できる工法だけを庭の既存 lens へ返す。
+
 ## やらないこと
 
 - 外部 repo を初日から丸ごと庭へ混ぜる
