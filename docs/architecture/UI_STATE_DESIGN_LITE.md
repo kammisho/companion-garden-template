@@ -44,6 +44,10 @@ UI state は、画面を作る手前の「操作の天気」を置く札。
 - `カードを増やす` が、比較や primary action をぼかしそう
 - `余白を詰める` が、scan や mobile use を苦しくしそう
 
+first view では `主操作 / 現在地 / 次の一手` がすぐ分かる hierarchy を作る。
+配置で伝わる意味を説明文で重ねず、判断に必要な情報と surface の声を残す。
+詳しくは [配置と言葉の役割](DESIGN_JUDGMENT_LENS_LITE.md#layout-and-words) を見る。
+
 この場合は、UI state を作り込む前に、
 `指定された見た目` と `本来の目的` が同じ方向を向いているかを確認する。
 

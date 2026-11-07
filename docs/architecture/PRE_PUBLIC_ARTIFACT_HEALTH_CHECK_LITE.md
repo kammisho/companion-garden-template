@@ -54,6 +54,22 @@ runtime・source original・evidence・scratch の混線、
 license / third-party notice / provenance を見る。
 repo に残す価値と公開 package に入れる必要は別に判定する。
 
+## Audience Surface Residue
+
+公開される README、guide、page、message、presentation などは、制作会話を知らない受け手の前で一枚だけで立つかを見る。
+先に `artifact / audience / shipping range` を固定し、対象面の要素を三つに分ける。
+
+- `audience content`: 受け手が読む、見る、操作するための内容
+- `production guidance`: 制作判断には必要だが、成果物では構成、語調、既定値、配置として実装する内容
+- `residue`: 却下案、修正会話、検収状態、言い訳、不要な予防線、読者に関係のない工程メタ
+
+audience content は磨いて残す。
+production guidance は成果物の形へ変換し、residue は公開面から外す。
+声、事実、機能、license や法令上必要な表示は削らない。
+
+raw source、decision history、receipt、authority contract、worklog は証拠面であり、この pass で洗わない。
+公開 package へ入れない必要がある場合は、原本を書き換えず shipping range を分ける。
+
 ## Bounded Runtime Proof
 
 target directory だけを loopback localhost で開く。
@@ -117,6 +133,7 @@ UNVERIFIED:
 runtime proof:
 state restoration:
 console / network:
+audience surface residue:
 next bounded pass:
 repo mutation:
 ```
