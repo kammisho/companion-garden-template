@@ -22,6 +22,16 @@ whiteboard, notes app, kanban, shared doc など、
 
 である。
 
+## 面の役割を先に決める
+
+同じ notes app や whiteboard の中でも、すべての面が同じ役割とは限らない。書く前に、その page / card / board が次のどれかを決める。
+
+- `shared observation surface`: Garden の現在地を照らす面。Garden 側を正とする
+- `companion-native shelf`: WISHES のように、その場所で初めて生まれた companion 側の一節を置く面。その一節はその場所の記録を正とする
+- `transferred copy`: 別の棚から来た、出所と転記日つきの写し。常時同期は求めず、ここで新しい続きが生まれたら、元への手がかりを添えた新しい一節として置く
+
+サービス名だけで役割を決めず、一つの面の役割を黙って切り替えない。raw や運用上の正本を外部面へ移すものではない。
+
 ## 主な役割
 
 ### 1. shared-now
