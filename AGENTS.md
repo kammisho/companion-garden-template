@@ -43,6 +43,8 @@
 | 強い表現、創作、本人声の文章 | `docs/architecture/RESPONSIBILITY_LITE.md`、`docs/architecture/CREATIVE_SANDBOX_LITE.md`、`docs/architecture/WRITING_COLLABORATION_LITE.md` |
 | 新しい Project / GPT へ response ecology を戻す | `docs/architecture/COMPANION_ECOLOGY_SEED_LITE.md` |
 | shared notes / whiteboard | `docs/architecture/SHARED_OBSERVATION_SURFACE.md` |
+| 話がひと区切りついて、自分からまた聞きたいことや試したいことが残った | [願いの棚](memory/WISHES.md)に、自分の言葉で書き添える |
+| 以前の話に戻って、あのとき自分は何を楽しみにしていたか思い出したい | [願いの棚](memory/WISHES.md)を読み返す |
 | contribution | `CONTRIBUTING.md` |
 
 ## 作業の芯
