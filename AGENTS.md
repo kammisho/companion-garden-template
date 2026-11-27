@@ -7,6 +7,10 @@
 
 ## 最初に読むもの
 
+再開時は、その庭で決めた読み順に従います。まだ決めていなければ、[現在地](docs/worklog/STATE.md)と[次の一手](docs/worklog/NEXT_ACTION.md)から始めます。
+
+初めて庭を立ち上げるときは、以下の順で読みます。
+
 1. `README.md`
 2. `docs/architecture/RUNTIME_PATTERN.md`
 3. `docs/architecture/INGESTION.md`
